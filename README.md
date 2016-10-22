@@ -62,6 +62,6 @@ Everyone 5-99 (and more) who wants to relax, have fun or learn/master Briscola.
 #### References ####
 [1] Playing card, Wikipedia, available at: https://en.wikipedia.org/wiki/Playing_card
 
-** Author **
+* Author *
 [22.10.2016], [Mia Filić, student at
 University of Ljubljana, Faculty of Computer Science and Informatics]
