@@ -38,15 +38,16 @@ The solution will include:
 The final product is an online application.
 Main part in development takes card-game and web programming.<br />
 
-
+![snipped scrach](https://cloud.githubusercontent.com/assets/22981166/19621246/f2a70926-988d-11e6-8fbe-6ef46b337810.PNG)<br />
 	Fig 2 - Short application flowchart
+	
 Application development is separated into 2 parts:
 Client side development: 
-The frame and organization of the site 
-Static page HTML/CSS 
-Interaction using JavaScript
+	1. The frame and organization of the site 
+	2. Static page HTML/CSS 
+	3. Interaction using JavaScript
 Server side development:
-		Using ASP.NET MVC and VIsual Studio 2012 (IDE)
+		Using ASP.NET MVC and Visual Studio 2012 (IDE)
 
 #### End user ####
 Everyone 5-99 (and more) who wants to relax, have fun or learn/master Briscola. 
