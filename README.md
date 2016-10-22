@@ -44,7 +44,7 @@ Main part in development takes card-game and web programming.<br />
 ![snipped scrach](https://cloud.githubusercontent.com/assets/22981166/19621246/f2a70926-988d-11e6-8fbe-6ef46b337810.PNG)<br />
 	Fig 2 - Short application flowchart
 	
-Application development is separated into 2 parts:<br />
+*Application development is separated into 2 parts:*
 
 1. Client side development:
 
