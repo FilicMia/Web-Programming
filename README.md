@@ -27,11 +27,11 @@ Implementation of the 2-player card-game Briscola, from which one is human and t
 #### Description of the solution ####
 The solution will include:<br />
 
-	1. Interactive interface (Fig 1) <br />
-	2. Instructions to the user how to play Briscola card-game<br />
-	3. Deployment of playing cards protocol based on card game rules<br />
-	4. Deployment of Monte Carlo algorithm or/and Random algorithm to simulate Computer playing<br />
-	5. Instructions to the user how to use the application<br />
+	1. Interactive interface (Fig 1)
+	2. Instructions to the user how to play Briscola card-game
+	3. Deployment of playing cards protocol based on card game rules
+	4. Deployment of Monte Carlo algorithm or/and Random algorithm to simulate Computer playing
+	5. Instructions to the user how to use the application
 
 
 ![bricsola](https://cloud.githubusercontent.com/assets/22981166/19621227/7fc8770a-988d-11e6-8a72-4cfdead12dd3.png) 
@@ -47,9 +47,9 @@ Main part in development takes card-game and web programming.<br />
 Application development is separated into 2 parts:<br />
 Client side development: <br />
 
-	1. The frame and organization of the site <br />
-	2. Static page HTML/CSS <br />
-	3. Interaction using JavaScript<br />
+	1. The frame and organization of the site 
+	2. Static page HTML/CSS 
+	3. Interaction using JavaScript
 	
 Server side development:<br />
 
