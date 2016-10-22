@@ -46,13 +46,13 @@ Main part in development takes card-game and web programming.<br />
 	
 Application development is separated into 2 parts:<br />
 
-1.Client side development: <br />
+1. Client side development:
 
 	1. The frame and organization of the site 
 	2. Static page HTML/CSS 
 	3. Interaction using JavaScript
 	
-2.Server side development:<br />
+2. Server side development:
 
 	1.Using ASP.NET MVC and Visual Studio 2012 (IDE)
 
