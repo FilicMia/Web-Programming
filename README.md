@@ -30,10 +30,11 @@ The solution will include:
 	2. Instructions to the user how to play Briscola card-game
 	3. Deployment of playing cards protocol based on card game rules
 	4. Deployment of Monte Carlo algorithm or/and Random algorithm to simulate Computer playing
-	5. Instructions to the user how to use the application
-<br />
+	5. Instructions to the user how to use the application<br />
 
-	Fig 1 Skratch of the user interface	
+![bricsola](https://cloud.githubusercontent.com/assets/22981166/19621227/7fc8770a-988d-11e6-8a72-4cfdead12dd3.png) <br />
+	Fig 1 Skratch of the user interface 
+
 The final product is an online application.
 Main part in development takes card-game and web programming.<br />
 
