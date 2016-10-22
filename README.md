@@ -1,5 +1,6 @@
-# Web-Programming
-course at Faculty
+Man vs Computer - MVC
+=============
+#### Web-Programming Project academic year 2016/2017 ####
 ![bricsola](https://cloud.githubusercontent.com/assets/22981166/19612787/e5cd6402-97e8-11e6-8bc3-d26289a515a1.png)
 [21.10.2016], [Mia Filić, student at
 University of Ljubljana, Faculty of Computer Science and Informatics]
