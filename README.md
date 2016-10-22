@@ -25,11 +25,11 @@ Help people to relax and find their inner child from time to time.
 Implementation of the 2-player card-game Briscola, from which one is human and the other is computer. 
 
 #### Description of the solution ####
-The solution will include:
-	1. Interactive interface (Fig 1)
-	2. Instructions to the user how to play Briscola card-game
-	3. Deployment of playing cards protocol based on card game rules
-	4. Deployment of Monte Carlo algorithm or/and Random algorithm to simulate Computer playing
+The solution will include:<br />
+	1. Interactive interface (Fig 1) <br />
+	2. Instructions to the user how to play Briscola card-game<br />
+	3. Deployment of playing cards protocol based on card game rules<br />
+	4. Deployment of Monte Carlo algorithm or/and Random algorithm to simulate Computer playing<br />
 	5. Instructions to the user how to use the application<br />
 
 ![bricsola](https://cloud.githubusercontent.com/assets/22981166/19621227/7fc8770a-988d-11e6-8a72-4cfdead12dd3.png) <br />
@@ -41,12 +41,12 @@ Main part in development takes card-game and web programming.<br />
 ![snipped scrach](https://cloud.githubusercontent.com/assets/22981166/19621246/f2a70926-988d-11e6-8fbe-6ef46b337810.PNG)<br />
 	Fig 2 - Short application flowchart
 	
-Application development is separated into 2 parts:
-Client side development: 
-	1. The frame and organization of the site 
-	2. Static page HTML/CSS 
-	3. Interaction using JavaScript
-Server side development:
+Application development is separated into 2 parts:<br />
+Client side development: <br />
+	1. The frame and organization of the site <br />
+	2. Static page HTML/CSS <br />
+	3. Interaction using JavaScript<br />
+Server side development:<br />
 		Using ASP.NET MVC and Visual Studio 2012 (IDE)
 
 #### End user ####
