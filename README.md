@@ -32,13 +32,14 @@ The solution will include:<br />
 	4. Deployment of Monte Carlo algorithm or/and Random algorithm to simulate Computer playing<br />
 	5. Instructions to the user how to use the application<br />
 
-![bricsola](https://cloud.githubusercontent.com/assets/22981166/19621227/7fc8770a-988d-11e6-8a72-4cfdead12dd3.png) <br />
+![bricsola](https://cloud.githubusercontent.com/assets/22981166/19621227/7fc8770a-988d-11e6-8a72-4cfdead12dd3.png) 
+Format: ![Interface](url) <br />
 	Fig 1 Skratch of the user interface 
 
 The final product is an online application.
 Main part in development takes card-game and web programming.<br />
 
-![snipped scrach](https://cloud.githubusercontent.com/assets/22981166/19621246/f2a70926-988d-11e6-8fbe-6ef46b337810.PNG)<br />
+![snipped scrach](https://cloud.githubusercontent.com/assets/22981166/19621246/f2a70926-988d-11e6-8fbe-6ef46b337810.PNG)<br />Format: ![Flowchart](url)
 	Fig 2 - Short application flowchart
 	
 Application development is separated into 2 parts:<br />
