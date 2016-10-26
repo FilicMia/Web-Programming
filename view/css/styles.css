@@ -1,0 +1,8 @@
+img#header {
+    max-width: 100%;
+    max-height: 50%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    border-radius: 25px;
+    border: 2px solid #303336;
+}
