@@ -1,8 +1,38 @@
+body{
+  background-color: #f5f5f0;
+}
+
+header{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 img#header {
     max-width: 100%;
     max-height: 50%;
     height: auto;
     width: auto\9; /* ie8 */
     border-radius: 25px;
-    border: 2px solid #303336;
+    border: 0px solid #303336;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
+
+nav {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* LIST #1 */
+#list1 {
+  background-color: #000;
+  
+  margin-top: 0;
+  padding-top: 0;
+}
+#list1 ul { list-style:none; text-align:center; border-top:1px solid #eee; border-bottom:1px solid #eee; padding:10px 0; }
+#list1 ul li { display:inline; text-transform:uppercase; padding:0 10px; letter-spacing:10px; }
+#list1 ul li a { text-decoration:none; color:#eee; }
+#list1 ul li a:hover { text-decoration:underline; }
