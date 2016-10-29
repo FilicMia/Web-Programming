@@ -7,3 +7,5 @@ function playVid() {
 function pauseVid() {
     vid.pause();
 }
+
+var intoVideoBody = document.getElementByTagName("body");
