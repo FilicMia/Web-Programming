@@ -72,7 +72,17 @@ selection.loginRegister, article.howToPlay{
   height: auto; /**Preserves the aspect ration :D*/
 }
 
-.loginRegister selection, .howToPlay selection{
+.loginRegister selection{
+  max-width: 40%;
+  min-width: 30%;
+  width: 40%;
+  max-height: 50%;
+  width: auto\9; /* ie8 */
+  height: auto;
+}
+
+.howToPlay selection{
+  max-width: 49%;
   width: 49%;
   max-height: 50%;
   width: auto\9; /* ie8 */
@@ -80,8 +90,94 @@ selection.loginRegister, article.howToPlay{
 
 }
 
+/** FORM STYLE *******************************/
+.loginRegisterSelection{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    margin: 1.5% auto;
+    padding: 2.5%;
+    background: #F7F7F7;
+}
+.loginRegisterSelection h1{
+    background: #43D1AF;
+    padding: 3.5% 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -2.6%;
+}
+.loginRegisterSelection input[type="text"],
+.loginRegisterSelection input[type="password"],
+.loginRegisterSelection input[type="checkbox"],
+.loginRegisterSelection input[type="email"],
+.loginRegisterSelection textarea,
+.loginRegisterSelection select
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.loginRegisterSelection input[type="text"]:focus,
+.loginRegisterSelection input[type="password"]:focus,
+.loginRegisterSelection input[type="checkbox"]:focus,
+.loginRegisterSelection input[type="email"]:focus,
+.loginRegisterSelection textarea:focus,
+.loginRegisterSelection select:focus
+{
+    box-shadow: 0 0 1% #43D1AF;
+    padding: 3%;
+    border: 0.1% solid #43D1AF;
+}
+
+.loginRegisterSelection button{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #5F9EA0;
+    border-bottom: 0.35% solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
+}
+
+.loginRegisterSelection button:hover{
+    background: #2F4F4F;
+}
+
+.psw{
+  font-size: none;
+  font-size:calc(3% + 1.75vw);
+}
+
+.psw a{
+  text-decoration: none;
+  color: #2F4F4F;
+}
+
+.psw a:hover{
+  text-decoration:underline;
+}
+
+/** ******** */
+
 .howToPlay h3{
-  clear: both; 
+  clear: both;
 }
 
 selection.right{
@@ -118,4 +214,3 @@ selection.text{
 ul#cardPoints {
   margin-top: 0;
 }
-
