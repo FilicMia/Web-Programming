@@ -1,7 +1,10 @@
-body{
-  background-color: #f5f5f0;
+* {
   margin: 0;
   padding: 0;
+}
+
+body{
+  background-color: #f5f5f0;
 }
 
 body header{
@@ -9,13 +12,6 @@ body header{
   max-height: 50%;
   clear:both;
 
-  margin: 0;
-  padding: 0;
-}
-
-figure {
-  margin: 0;
-  padding: 0;
 }
 
 img#header {
@@ -25,8 +21,6 @@ img#header {
     /*border-radius: 25px;
     border: .5px solid #303336;*/
 
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 
 /*.image:hover {
@@ -38,15 +32,11 @@ img#header {
           transition: all 0.7s ease;
 }*/
 
-/* LIST #1 */
+/* Menu*/
 #list1 {
   background-color: #000;
   clear:both; /**clear the floating things.*/
 
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
   border: none;
   vertical-align: top;
 }
@@ -56,7 +46,7 @@ img#header {
   text-align:center;
   border-bottom:0.1em solid #eee;
   padding:1em 0;
-  margin: 0;
+
 }
 #list1 ul li {
   display:inline;
@@ -65,51 +55,67 @@ img#header {
 
   padding:0 1%;
 }
+
 #list1 ul li a {
   text-decoration:none;
   font-size: none;
   font-size:calc(3% + 2vw);
   color:#eee;
 }
+
 #list1 ul li a:hover {
   text-decoration:underline;
 }
-.howToPlay{
-  margin: 0;
-  padding: 0;
-  
+
+selection.loginRegister, article.howToPlay{
+  width: 100%;
+  height: auto; /**Preserves the aspect ration :D*/
 }
 
-.howToPlay selection{
-  width: 50%;
+.loginRegister selection, .howToPlay selection{
+  width: 49%;
   max-height: 50%;
+  width: auto\9; /* ie8 */
   height: auto;
-  
-  margin:0;
-  padding:0;
+
 }
 
-.howToPlay selection.video {
-  width: 50%;
-  max-height: 50%;
-  height: auto;
-
-  float:left;
-  margin: 0;
-  padding: 0;
+.howToPlay h3{
+  clear: both; 
 }
 
-.howToPlay selection.picture{
-  width: 50%;
-  max-height: 50%;
-  height: auto;
+selection.right{
+  display: inline-block;
   float:right;
+  clear: right;
 }
 
-
-.videocontainer {
-  position:absolute;
-  width:100%;
-  height:100%;
-  z-index:10000;
+selection.left{
+  display: inline-block;
+  float:left;
+  clear: left;
 }
+
+.howToPlay selection.video #headerVideo,
+.howToPlay selection.picture figure, #howToPlayImage
+{
+  width: 100%;
+  height: auto;
+  width: auto\9;
+}
+
+selection.text ol, ul{
+  display: inline-block;
+  list-style-position: inside;
+}
+
+selection.text{
+  font-size: none;
+  font-size:calc(3% + 1.75vw);
+}
+
+/**points of the cards list*/
+ul#cardPoints {
+  margin-top: 0;
+}
+
