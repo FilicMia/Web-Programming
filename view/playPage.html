@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head >
+    <meta charset="utf-8">
+    <title>Card Game</title>
+    <meta name="author" content="Mia FIlić">
+
+    <link rel="stylesheet" href="css/stylesPlay.css?v=1.0">
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+    <script type = "text/javaScript" src = "supplyFunctions.js">
+    </script>
+  <head/>
+
+  <body>
+    <div class="playTable">
+    <div class="row firstRow">
+      <div class="item left">
+        <div class="card briscola">
+          <img src="media/pictures/slika15.jpg" alt="briscola" class="cardImg">
+        </div>
+        <div class="card opposite">
+          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg">
+        </div>
+        <div class="card opposite">
+          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg">
+        </div>
+        <div class="card opposite">
+          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg">
+        </div>
+        <div class="card opposite">
+          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg">
+        </div>
+      </div><!--
+   --><div class="item center">
+        <div class="card card1">
+          <img src="" alt="card 1" class="cardImg">
+        </div><!--
+     --><div class="card card2">
+          <img src="media/pictures/opposite.jpg" alt="card 2" class="cardImg" onclick="window.location = 'roundOverPage.html';">
+        </div><!--
+     --><div class="card card3">
+          <img src="media/pictures/opposite.jpg" alt="card 3" class="cardImg" onclick="window.location = 'roundOverPage.html';">
+        </div>
+      </div><!--
+   --><div class="item right">(1,3)</div>
+
+    </div>
+    <div class="row secondRow">
+      <div class="item left">(2,1)</div><!--
+   --><div class="item center">
+         <div class="card card1">
+           <img src="media/pictures/slika1.jpg" alt="card 1" class="cardImg">
+         </div><!--
+      --><div class="card card2">
+           <img src="media/pictures/slika5.jpg" alt="card 2" class="cardImg">
+         </div>
+      </div><!--
+   --><div class="item right">(2,3)</div>
+
+    </div>
+    <div class="row thirdRow">
+      <div class="item left">(3,1)</div><!--
+   --><div class="item center">
+         <div class="card card1">
+           <img src="media/pictures/slika12.jpg" alt="card 1" class="cardImg" onclick="window.location = 'roundOverPage.html';">
+         </div><!--
+      --><div class="card card2">
+           <img src="media/pictures/slika8.jpg" alt="card 2" class="cardImg" onclick="window.location = 'roundOverPage.html';">
+         </div><!--
+      --><div class="card card3">
+          <img src="" alt="card 3" class="cardImg">
+         </div>
+      </div><!--
+   --><div class="item right">(3,3)</div>
+
+    </div>
+    </div>
+    <div class = "playerInfo">
+      <p>
+        Player name: Marinko
+      </p>
+    </div>
+  </body>
+</html>
