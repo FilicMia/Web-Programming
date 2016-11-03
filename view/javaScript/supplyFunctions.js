@@ -1,4 +1,4 @@
-var vid = document.getElementById("headerVideo");
+var vid = document.getElementById("introVideo");
 
 function playVid() {
     vid.play();
