@@ -36,8 +36,8 @@ The solution will include:
 The final product is an online application.
 Main part in development takes card-game and web programming.<br />
 
-![snipped scrach](https://cloud.githubusercontent.com/assets/22981166/19621246/f2a70926-988d-11e6-8fbe-6ef46b337810.PNG)<br />
-	Fig 2 - Short application flowchart
+[Bricsola.pdf](https://github.com/FilicMia/Web-Programming/files/571750/Bricsola.pdf)<br />
+	Fig 1 - Short application flowchart
 	
 *Application development is separated into 2 parts:*
 
