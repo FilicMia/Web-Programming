@@ -5,7 +5,6 @@ function hasClass(ele,cls) {
 function addClass(ele,cls) {
   if (!hasClass(ele,cls)) {
     ele.className += " "+cls;
-    console.log("dodajem klasuu");
   }
 }
 
@@ -29,7 +28,6 @@ document.onreadystatechange = function () {
     var navbarHeight = document.getElementById("headerID").offsetHeight;
 
     window.onscroll = function() {
-        console.log('scrolling');
         didScroll = true;
     };
     // on scroll, let the interval function know the user has scrolled

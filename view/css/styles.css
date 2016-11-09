@@ -6,6 +6,7 @@
 
 body{
   background-color: #f5f5f0;
+  font: 95% Arial, Helvetica, sans-serif;
 }
 
 body header{
@@ -122,21 +123,14 @@ selection.loginRegister, article.howToPlay{
 
 /** FORM STYLE *******************************/
 .loginRegisterSelection{
-    font: 95% Arial, Helvetica, sans-serif;
+    font-size: none;
+    font-size:calc(3% + 1.75vw);
     max-width: 400px;
     margin: 1.5% auto;
     padding: 2.5%;
     background: #F7F7F7;
 }
-.loginRegisterSelection h1{
-    background: #43D1AF;
-    padding: 3.5% 0;
-    font-size: 140%;
-    font-weight: 300;
-    text-align: center;
-    color: #fff;
-    margin: -2.6%;
-}
+
 .loginRegisterSelection input[type="text"],
 .loginRegisterSelection input[type="password"],
 .loginRegisterSelection input[type="checkbox"],
@@ -159,6 +153,8 @@ selection.loginRegister, article.howToPlay{
     padding: 3%;
     color: #555;
     font: 95% Arial, Helvetica, sans-serif;
+    font-size: none;
+    font-size:calc(3% + 1.75vw);
 }
 .loginRegisterSelection input[type="text"]:focus,
 .loginRegisterSelection input[type="password"]:focus,
@@ -173,6 +169,8 @@ selection.loginRegister, article.howToPlay{
 }
 
 .loginRegisterSelection button{
+    font-size: none;
+    font-size:calc(3% + 1.75vw);
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -208,6 +206,8 @@ selection.loginRegister, article.howToPlay{
 
 .howToPlay h3{
   clear: both;
+  font-size: none;
+  font-size:calc(3% + 3vw);
 }
 
 selection.right{
@@ -247,7 +247,7 @@ ul#cardPoints {
 
 /**Make the header disapear when scrolling*/
 body{
-  padding-top: 5%; /**Set to correct--margin is 5%*/
+  padding-top: 5%; /**Set to correct--*/
 }
 
 header{
