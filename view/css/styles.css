@@ -10,17 +10,28 @@ body{
 
 body header{
   width: 100%;
-  max-height: 50%;
+  max-height: 10%; /**It is just menu*/
   clear:both;
 
 }
+
+body {
+  margin: 5%;
+}
+
+body {
+  background: url(../media/BriskolaassesSTILISH.jpg) no-repeat;
+  background-size: cover;
+}
 /*******************************************************/
-img#header {
+
+img#upperMain {
     height: auto;
     width: 100%;
     width: auto\9; /* ie8 */
     /*border-radius: 25px;
     border: .5px solid #303336;*/
+    opacity: 0.8;
 
 }
 
@@ -42,11 +53,12 @@ img#header {
 
 /* Menu*/
 #list1 {
-  background-color: #000;
+  background-color: #000000;
   clear:both; /**clear the floating things.*/
 
   border: none;
   vertical-align: top;
+  z-index: 2;
 }
 
 #list1 ul {
@@ -211,7 +223,7 @@ selection.left{
 }
 
 .howToPlay selection.video #headerVideo,
-.howToPlay selection.picture figure, #howToPlayImage
+.howToPlay selection.picture img, #howToPlayImage
 {
   width: 100%;
   height: auto;
@@ -231,4 +243,23 @@ selection.text{
 /**points of the cards list*/
 ul#cardPoints {
   margin-top: 0;
+}
+
+/**Make the header disapear when scrolling*/
+body{
+  padding-top: 5%; /**Set to correct--margin is 5%*/
+}
+
+header{
+  max-height: 10%;
+  width: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+}
+
+.nav-up{
+  top: -10%;
 }
