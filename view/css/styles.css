@@ -5,8 +5,11 @@
 }
 
 body{
-  background-color: #f5f5f0;
   font: 95% Arial, Helvetica, sans-serif;
+  background: url(../media/BriskolaassesSTILISH.jpg) no-repeat;
+  background-color:#ceb182;
+  background-size: contain;
+  opacity: 0.3%;
 }
 
 body header{
@@ -19,11 +22,6 @@ body header{
 body {
   margin: 5%;
 }
-
-body {
-  background: url(../media/BriskolaassesSTILISH.jpg) no-repeat;
-  background-size: cover;
-}
 /*******************************************************/
 
 img#upperMain {
@@ -32,7 +30,7 @@ img#upperMain {
     width: auto\9; /* ie8 */
     /*border-radius: 25px;
     border: .5px solid #303336;*/
-    opacity: 0.8;
+    opacity: 1;
 
 }
 
@@ -66,14 +64,14 @@ img#upperMain {
   width: 100%;
   list-style:none;
   text-align:center;
-  border-bottom:0.1em solid #eee;
-  padding:1em 0;
+  border-bottom:calc(1% + 1vw); solid #eee;
+  padding:calc(0.5% + 1vw); 0;
 
 }
 #list1 ul li {
   display:inline;
   text-transform:uppercase;
-  letter-spacing:0.2em;
+  letter-spacing:calc(3% + 2vw);;
 
   padding:0 1%;
 }
@@ -97,6 +95,7 @@ img#upperMain {
 #list1 ul li a:hover {
   text-decoration:underline;
 }
+/*****************************************************************************/
 
 selection.loginRegister, article.howToPlay{
   width: 100%;
@@ -204,12 +203,6 @@ selection.loginRegister, article.howToPlay{
 
 /** ******** */
 
-.howToPlay h3{
-  clear: both;
-  font-size: none;
-  font-size:calc(3% + 3vw);
-}
-
 selection.right{
   display: inline-block;
   float:right;
@@ -263,3 +256,43 @@ header{
 .nav-up{
   top: -10%;
 }
+
+/******************************************************************************/
+/**Text decoration*/
+.howToPlay h3 {
+  color: #d25852;
+  clear: both;
+  font-family: "Great Vibes", cursive;
+  font-size: calc(5% + 5vw);/**165*/
+  line-height: calc(5% + 5vw);
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: calc(0.5% + 0.5vw);
+  text-align: left;
+  text-shadow: 0 calc(0.1% + 0.1vw) calc(0.1% + 0.1vw) #fff; }
+
+article selection.text{
+  background-color: #F7F7F7;
+}
+
+.howToPlay p { color: #7a7c7f;
+  font-size: calc(3% + 1.75vw);
+  line-height: calc(10% + 10vw);
+  text-align: center;
+  text-shadow: 0 calc(0.1% + 0.1vw) calc(0.1% + 0.1vw) #fff;
+  padding-top: calc(1% + 1vw);
+ }
+
+.howToPlay ul, ol{
+  align-items: center;
+  background-color: #edc27d;
+  width: 100%;
+}
+.howToPlay li { font-style: italic;
+  color: #768696;
+  font-size: calc(3% + 1.5vw);
+  margin-top: calc(3% + 1.5vw);
+  margin-left: 5%;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+ }
