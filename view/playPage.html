@@ -10,7 +10,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 
-    <script type = "text/javaScript" src = "supplyFunctions.js">
+    <script type = "text/javaScript" src = "javaScript/play.js">
     </script>
   <head/>
 
@@ -19,30 +19,21 @@
     <div class="row firstRow">
       <div class="item left">
         <div class="card briscola">
-          <img src="media/pictures/slika15.jpg" alt="briscola" class="cardImg">
+          <img src="media/pictures/slika15.jpg" alt="briscola" class="cardImg" id = "briscola">
         </div>
         <div class="card opposite">
-          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg">
-        </div>
-        <div class="card opposite">
-          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg">
-        </div>
-        <div class="card opposite">
-          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg">
-        </div>
-        <div class="card opposite">
-          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg">
+          <img src="media/pictures/opposite.jpg" alt="opposite" class="cardImg deckCard">
         </div>
       </div><!--
    --><div class="item center">
         <div class="card card1">
-          <img src="" alt="card 1" class="cardImg">
+          <img src="" alt="1" class="cardImg playCard computer 1">
         </div><!--
      --><div class="card card2">
-          <img src="media/pictures/opposite.jpg" alt="card 2" class="cardImg" onclick="window.location = 'roundOverPage.html';">
+          <img src="media/pictures/opposite.jpg" alt="2" class="cardImg playCard computer 2" >
         </div><!--
      --><div class="card card3">
-          <img src="media/pictures/opposite.jpg" alt="card 3" class="cardImg" onclick="window.location = 'roundOverPage.html';">
+          <img src="media/pictures/opposite.jpg" alt="3" class="cardImg playCard computer 3">
         </div>
       </div><!--
    --><div class="item right">(1,3)</div>
@@ -52,10 +43,10 @@
       <div class="item left">(2,1)</div><!--
    --><div class="item center">
          <div class="card card1">
-           <img src="media/pictures/slika1.jpg" alt="card 1" class="cardImg">
+           <img src="/" alt="1" class="cardImg firstEmptySpace ">
          </div><!--
       --><div class="card card2">
-           <img src="media/pictures/slika5.jpg" alt="card 2" class="cardImg">
+           <img src="/" alt="2" class="cardImg firstEmptySpace ">
          </div>
       </div><!--
    --><div class="item right">(2,3)</div>
@@ -65,13 +56,13 @@
       <div class="item left">(3,1)</div><!--
    --><div class="item center">
          <div class="card card1">
-           <img src="media/pictures/slika12.jpg" alt="card 1" class="cardImg" onclick="window.location = 'roundOverPage.html';">
+           <img src="media/pictures/slika12.jpg" alt="1" class="cardImg playCard player 1" >
          </div><!--
       --><div class="card card2">
-           <img src="media/pictures/slika8.jpg" alt="card 2" class="cardImg" onclick="window.location = 'roundOverPage.html';">
+           <img src="media/pictures/slika8.jpg" alt="2" class="cardImg playCard player 2" >
          </div><!--
       --><div class="card card3">
-          <img src="" alt="card 3" class="cardImg">
+          <img src="" alt="3" class="cardImg playCard player 3">
          </div>
       </div><!--
    --><div class="item right">(3,3)</div>
@@ -81,6 +72,9 @@
     <div class = "playerInfo">
       <p>
         Player name: Marinko
+      </p>
+      <p class="minePoints">
+        0
       </p>
     </div>
   </body>

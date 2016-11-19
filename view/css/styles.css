@@ -83,7 +83,7 @@ img#upperMain {
   color:#eee;
 }
 
-#list1 ul li.logoutLink a{
+#list1 ul li.logoutLink a, #list1 ul li.loginLink a{
   text-align: right;
   text-decoration:none;
   font-size: none;
@@ -97,9 +97,14 @@ img#upperMain {
 }
 /*****************************************************************************/
 
-selection.loginRegister, article.howToPlay{
+div.loginRegister, article.howToPlay{
   width: 100%;
   height: auto; /**Preserves the aspect ration :D*/
+}
+
+div.loginRegister{
+  display: flex;
+  flex-flow: row;
 }
 
 .loginRegister selection{
@@ -111,14 +116,16 @@ selection.loginRegister, article.howToPlay{
   height: auto;
 }
 
-.howToPlay selection{
+/*.howToPlay selection{
   max-width: 49%;
   width: 49%;
   max-height: 50%;
   width: auto\9; /* ie8 */
-  height: auto;
+  /*height: auto;
 
 }
+FLex handle this, so this is ok :D
+*/
 
 /** FORM STYLE *******************************/
 .loginRegisterSelection{
@@ -204,15 +211,15 @@ selection.loginRegister, article.howToPlay{
 /** ******** */
 
 selection.right{
-  display: inline-block;
+/*  display: inline-block;
   float:right;
-  clear: right;
+  clear: right;*/
 }
 
 selection.left{
-  display: inline-block;
+  /*display: inline-block;
   float:left;
-  clear: left;
+  clear: left;*/
 }
 
 .howToPlay selection.video #headerVideo,
@@ -224,7 +231,7 @@ selection.left{
 }
 
 selection.text ol, ul{
-  display: inline-block;
+    display: inline-block;
   list-style-position: inside;
 }
 
@@ -297,3 +304,28 @@ article selection.text{
   text-align: center;
   text-shadow: 0 0.5px 0.5px #fff;
  }
+/*********************Flex properties******************************/
+body{
+  display: flex;
+  flex-flow: row;
+}
+
+article{
+  display: flex;
+  flex-flow: column;
+}
+
+.row{
+  display: flex;
+  flex-flow: row;
+}
+
+@media only screen
+  and (max-width: 414px){ /**960 414 and bellow*/
+   article{
+     flex-flow:column;
+   }
+}
+
+ /*********************************************************/
+ /** Login appear*/
