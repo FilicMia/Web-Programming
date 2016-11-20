@@ -307,7 +307,9 @@ article selection.text{
 /*********************Flex properties******************************/
 body{
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
+  margin-bottom: 0;
+
 }
 
 article{
@@ -315,14 +317,30 @@ article{
   flex-flow: column;
 }
 
+footer{
+  width: 100%;
+  border-color: #F7F7F7;
+  
+  color: inherit;
+  font-size: calc(3% + 1.5vw);
+  text-align: left;
+  text-shadow: 0 calc(0.1% + 0.1vw) calc(0.1% + 0.1vw) #fff;
+  padding-top: calc(1% + 1vw);
+}
+
 .row{
   display: flex;
   flex-flow: row;
 }
 
+.row selection{
+  max-width: 49%;
+  max-height: auto;
+}
+
 @media only screen
   and (max-width: 414px){ /**960 414 and bellow*/
-   article{
+   .row{
      flex-flow:column;
    }
 }
