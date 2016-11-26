@@ -3,7 +3,7 @@
   <head >
     <meta charset="utf-8">
     <title>Card Game</title>
-    <meta name="author" content="Mia FIlić">
+    <meta name="author" content="Mia Filić">
 
     <link rel="stylesheet" href="css/stylesPlay.css?v=1.0">
     <!--[if lt IE 9]>
@@ -15,6 +15,9 @@
   <head/>
 
   <body>
+    <header>
+    </header>
+    <main>
     <div class="playTable">
     <div class="row firstRow">
       <div class="item left">
@@ -43,10 +46,10 @@
       <div class="item left">(2,1)</div><!--
    --><div class="item center">
          <div class="card card1">
-           <img src="/" alt="1" class="cardImg firstEmptySpace ">
+           <img src="/" alt="1" class="cardImg throwingTable firstEmptySpace ">
          </div><!--
       --><div class="card card2">
-           <img src="/" alt="2" class="cardImg firstEmptySpace ">
+           <img src="/" alt="2" class="cardImg throwingTable firstEmptySpace ">
          </div>
       </div><!--
    --><div class="item right">(2,3)</div>
@@ -65,17 +68,22 @@
           <img src="" alt="3" class="cardImg playCard player 3">
          </div>
       </div><!--
-   --><div class="item right">(3,3)</div>
+   --><div class="item right">(3,3)
+       <div id="playerInfo">
+         <p class="playerName">
+           Marinko
+         </p>
+         <p class="minePoints">
+           0
+         </p>
+       </div>
+     </div>
 
     </div>
     </div>
-    <div class = "playerInfo">
-      <p>
-        Player name: Marinko
-      </p>
-      <p class="minePoints">
-        0
-      </p>
-    </div>
+  </main>
+  <footer>
+    <p>By: Ko je Ovo</p>
+  </footer>
   </body>
 </html>

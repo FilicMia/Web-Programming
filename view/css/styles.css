@@ -6,8 +6,7 @@
 
 body{
   font: 95% Arial, Helvetica, sans-serif;
-  background: url(../media/BriskolaassesSTILISH.jpg) no-repeat;
-  background-color:#ceb182;
+  background-color: #E7E7E7;
   background-size: contain;
   opacity: 0.3%;
 }
@@ -96,6 +95,11 @@ img#upperMain {
   text-decoration:underline;
 }
 /*****************************************************************************/
+.loginCheck {
+  position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
 
 div.loginRegister, article.howToPlay{
   width: 100%;
@@ -106,6 +110,7 @@ div.loginRegister{
   display: flex;
   flex-flow: row;
 }
+
 
 .loginRegister selection{
   max-width: 40%;
@@ -169,7 +174,7 @@ FLex handle this, so this is ok :D
 .loginRegisterSelection textarea:focus,
 .loginRegisterSelection select:focus
 {
-    box-shadow: 0 0 1% #43D1AF;
+    box-shadow: 0 0 1px #43D1AF;
     padding: 3%;
     border: 0.1% solid #43D1AF;
 }
@@ -222,12 +227,16 @@ selection.left{
   clear: left;*/
 }
 
-.howToPlay selection.video #headerVideo,
+#headerVideo,
 .howToPlay selection.picture img, #howToPlayImage
 {
   width: 100%;
   height: auto;
   width: auto\9;
+}
+
+#headerVideo{
+  margin-bottom: 50%;
 }
 
 selection.text ol, ul{
@@ -266,17 +275,29 @@ header{
 
 /******************************************************************************/
 /**Text decoration*/
+
 .howToPlay h3 {
-  color: #bb671c;
+  color: #f73333;
   clear: both;
   font-family: "Great Vibes", cursive;
-  font-size: calc(5% + 5vw);/**165*/
+  font-size: calc(3% + 5vw);/**165*/
   line-height: calc(5% + 5vw);
   font-weight: normal;
   margin-bottom: 0px;
   margin-top: calc(0.5% + 0.5vw);
   text-align: left;
-  text-shadow: 0 calc(0.1% + 0.1vw) calc(0.1% + 0.1vw) #fff; }
+  text-shadow: 0 1% 1% #fff;
+
+  width: 85%;
+  text-align: center;
+  box-shadow: -10px -10px 30px #0e0e0e inset;
+  border-radius: 0 30px 30px 0;
+  padding: 2% 2%;
+  }
+
+span{
+  color: #f70c0c;
+}
 
 article selection.text{
   background-color: #F7F7F7;
@@ -320,7 +341,7 @@ article{
 footer{
   width: 100%;
   border-color: #F7F7F7;
-  
+
   color: inherit;
   font-size: calc(3% + 1.5vw);
   text-align: left;
@@ -338,10 +359,45 @@ footer{
   max-height: auto;
 }
 
+main{
+  -webkit-box-shadow: -0.5px 0.5px 2.5px 4.5px rgba(0,0,0,0.5);
+  -moz-box-shadow: -0.5px 0.5px 2.5px 4.5px rgba(0,0,0,0.5);
+  box-shadow: -0.5px 0.5px 2.5px 4.5px rgba(0,0,0,0.5);
+}
+
 @media only screen
   and (max-width: 414px){ /**960 414 and bellow*/
+
    .row{
      flex-flow:column;
+     text-align: center;
+   }
+   .row selection{
+     margin-left: 15%;
+     max-width: 70%;
+     max-height: auto;
+   }
+
+   .howToPlay .row h3{
+     width: 96%;
+     border-radius: 0;
+     margin-top: 1%;
+     padding-top: 2%;
+     padding-bottom: 5%;
+   }
+
+   main{
+     -webkit-box-shadow: -.1px .1px .5px .9px rgba(0,0,0,0.75);
+     -moz-box-shadow: -.1px .1px .5px .9px rgba(0,0,0,0.75);
+     box-shadow: -.1px .1px .5px .9px rgba(0,0,0,0.75);
+     background-color: #F7F7F7;
+   }
+   #headerVideo{
+     margin-bottom: 10%;
+   }
+
+   .howToPlay .row h3{
+     display: none;
    }
 }
 

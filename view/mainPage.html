@@ -18,10 +18,9 @@
     <header class="nav-down" id = "headerID">
       <nav id="list1">
          <ul>
+
            <li class="loginLink"><a href="#">Login to start playing</a></li>
-            <!--About the project__ at the end can be as
-          well the link to git source code.-->
-            <li><a href="#">Rules</a></li>
+            <li id="proba"><a href="#">Rules</a></li>
             <li><a href="#">History</a></li>
             <li><a href="#"></a></li>
          </ul>
@@ -34,14 +33,14 @@
         <div class="loginRegister">
 
           <selection class="loginRegisterSelection left">
-            <form action="mainPageLoged.html">
+            <form action="mainPageLoged.html" id="loginForm">
                <label><b>Username</b></label>
-               <input type="text" placeholder="Enter Username" name="uname" required>
+               <input id = "loginUsername" type="text" placeholder="Enter Username" name="uname" required>
 
                <label><b>Password</b></label>
                <input type="password" placeholder="Enter Password" name="psw" required>
 
-               <button type="submit">Login</button>
+               <button type="submit" id="loginBtn">Login</button>
 
                <span class="psw">Forgot <a href="#">password?</a></span>
             </form>
@@ -65,16 +64,8 @@
 
         <article class="howToPlay">
           <div class="row">
-          <selection class="video upper left">
-            <h3>HOW TO play Briscola?</h3>
-            <video id = "headerVideo" height="auto" controls preload="none" autoplay>
-              <source src="media/ExampleOfPlayGame.mp4" type="video/mp4">
-              <p>If you are reading this, it is because your browser
-                does not support the HTML5 video element.</p>
-            </video>
-          </selection>
 
-          <selection class="text upper right">
+          <selection class="text upper left">
             <p>
               Briscola is often played with Italian cards with suits of
                 swords (spade), clubs (bastoni), cups (coppe) and coins (danari).
@@ -100,6 +91,10 @@
               Games can end in a draw when both reach the same point total (60).
 
             </p>
+          </selection>
+
+          <selection class="upper right">
+            <h3>HOW TO play Briscola?</h3>
           </selection>
         </div>
 
@@ -175,8 +170,12 @@
               above. The player with more points wins, or if each has 60, it is a draw.
            </p>
           </selection>
-          <selection class="picture down right">
-
+          <selection class="video picture down right">
+              <video id = "headerVideo" height="auto" controls preload="none" autoplay>
+                <source src="media/ExampleOfPlayGame.mp4" type="video/mp4">
+                <p>If you are reading this, it is because your browser
+                  does not support the HTML5 video element.</p>
+              </video>
               <img id="howToPlayImage" src="media/triestine comics.png" alt="Header fancy picture" />
 
           </selection>
