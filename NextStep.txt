@@ -1,0 +1,3 @@
+-functional ligin and e-mail registration
+-game logic implementation on server side
+-to the client will be only sent cards which should be displayed, as well as his result and name.
