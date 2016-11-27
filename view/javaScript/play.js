@@ -1,39 +1,22 @@
 /**
-Function checking if element ele is of class named cls.
-@param ele element to be check for the class
-@param cls class for which the element ele will be checked
-
-@return true, if the element ele is of class cls,
-        false otherwise.
+Function dynamically loading css file or js file.
+@param filename name of the file to be inported
+@param type of the file to be imported ("css", "js", undefined)
 */
-function hasClass(ele,cls) {
-  return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
-}
-
-/**
-Function adding to the element class named cls if the element is not jet
-of class cls. Otherwise does nothing.
-@param ele element to which the class is added
-@param cls class which will be added to the element ele.
-*/
-function addClass(ele,cls) {
-  if (!hasClass(ele,cls)) {
-    ele.className += " "+cls;
-  }
-}
-
-/**
-Function removing class named cls from the element ele if ele is of class cls.
-If ele is not of class cls, does nothing.
-@param ele element from which to remove class cls
-@param cls class which will be removed from the element ele
-
-*/
-function removeClass(ele,cls) {
-  if (hasClass(ele,cls)) {
-    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
-    ele.className=ele.className.replace(reg,' ');
-  }
+function loadjscssfile(filename, filetype){
+    if (filetype=="js"){ //if filename is a external JavaScript file
+        var fileref=document.createElement('script')
+        fileref.setAttribute("type","text/javascript")
+        fileref.setAttribute("src", filename)
+    }
+    else if (filetype=="css"){ //if filename is an external CSS file
+        var fileref=document.createElement("link")
+        fileref.setAttribute("rel", "stylesheet")
+        fileref.setAttribute("type", "text/css")
+        fileref.setAttribute("href", filename)
+    }
+    if (typeof fileref!="undefined")
+        document.getElementsByTagName("head")[0].appendChild(fileref)
 }
 
 /**
@@ -135,7 +118,7 @@ playTurn = function(playCardClass = "computer", index = -1){
   addClass(spaceToThrowCard[0],"thrown");
   removeClass(spaceToThrowCard[0], "firstEmptySpace");
 
-  cards[index].src = "/";
+  cards[index].src = "../media/pictures/pic.jpg";
 
   addClass(cards[index], "addCard");
   removeClass(cards[index], "playCard");
@@ -187,8 +170,8 @@ playCardEvent = function(e){
       playTurn("player playCard", parseInt(target.alt));
       setTimeout(playTurn(),1000);
     } else{
-      console.log("It is not your turn!! Wait a bit.");
-      alert("Wait a bit :D")
+
+      waitAbitPopup();
     }
   }
 }
@@ -226,7 +209,7 @@ deckCardPull = function(){
   if(briscolaPlay.cardsLeft == 1){
     var deckCard = document.getElementsByClassName("deckCard");
     for(var i = 0; i < deckCard.length; i++){
-      deckCard[i].src = "/";
+      deckCard[i].src = "../media/pictures/pic.jpg";
     }
   }
   if(briscolaPlay.onTurn){
@@ -238,7 +221,7 @@ deckCardPull = function(){
   //remove it from the deck
   if(briscolaPlay.cardsLeft == 0){
     var briscola = document.getElementById("briscola");
-    briscola.src = "/";
+    briscola.src = "../media/pictures/pic.jpg";
   }
 }
 
@@ -368,7 +351,7 @@ sumCards = function(){
       addPlayCardsListeners();
       var thrownCards = document.getElementsByClassName("thrown");
       while(thrownCards.length > 0){
-        thrownCards[0].src = "";
+        thrownCards[0].src = "../media/pictures/pic.jpg";
         thrownCards[0].removeAttribute("name");
         briscolaPlay.cardsOnTable[parseInt(thrownCards[0].alt)-1] = -1;
         removeClass(thrownCards[0], "thrown");
@@ -388,7 +371,9 @@ roundOverFunction = function(){
   if(briscolaPlay.result[briscolaPlay.myId] == briscolaPlay.result[briscolaPlay.hisId]){
     name = undefined;
   }
+  name = localStorage.getItem("user");
   localStorage.clear();
+  localStorage.setItem("user",name);
   window.location = './roundOverPage.html?winner=' + name;
 }
 
@@ -580,6 +565,9 @@ continueGame = function(){
   console.log(localStorage.getItem("start"));
   briscolaPlay.setJSON(localStorage.getItem("briscolaPlay"));
   console.log("hi cards "+briscolaPlay.hisCards);
+  document.getElementsByClassName("minePoints")[0].innerHTML=
+                  briscolaPlay.getResult()[briscolaPlay.myId];
+
 
   var briscola = document.getElementById("briscola");
   briscola.src = briscolaPlay.cardsPath + briscolaPlay.mixedCards[briscolaPlay.deckSize-1]+".jpg";
@@ -594,7 +582,7 @@ continueGame = function(){
         card[i].addEventListener('click', playCardEventWrapper, false);
         compCardsInHand ++;
     } else {
-      card[i].src = "";
+      card[i].src = "../media/pictures/pic.jpg";
       addClass(card[i],"addCard");
       removeClass(card[i],"playCard");
     }
@@ -611,7 +599,7 @@ continueGame = function(){
         addClass(card[i],"playCard");
 
     } else {
-      card[i].src = "";
+      card[i].src = "../media/pictures/pic.jpg";
       addClass(card[i],"addCard");
       removeClass(card[i],"playCard");
     }
@@ -687,13 +675,24 @@ onCloseTabWindowEvent = function(){
   localStorage.setObj("briscolaPlay",briscolaPlay);
   localStorage.setObj("start", false);
   if(briscolaPlay.cardsLeft == 0){
+    var user = localStorage.getItem("user");
     localStorage.clear();
+    localStorage.setItem("user",user);
   }
+}
+
+/**
+Function called when the user whant to play, but it
+should be warn to wait a bit.
+It is not it turn.
+*/
+waitAbitPopup = function(){
+  window.location = "#popup1";
 }
 
 ///////////////////////////////////////////////
 ///////////Main /////////////////////////////
-
+loadjscssfile("javaScript/classFunctions.js","js");
 /**The game. */
 var briscolaPlay = new BriscolaPlay();
 ////////////////////////////////////////////////////////////
@@ -703,6 +702,10 @@ document.onreadystatechange = function () {
 
     onCloseTabWindowEvent();
   };
+  var user = localStorage.getItem("user");
+  document.getElementsByClassName("playerName")[0].innerHTML =
+       user === undefined ? "Marinko" : user;
+
 
    if (document.readyState == "complete") {
      //maybe we want to restare the game.

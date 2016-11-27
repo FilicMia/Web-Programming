@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Tahoma, Arial, sans-serif;
   background: url(../media/BriskolaassesSTILISH.jpg) no-repeat;
   background-size: cover;
   font-size: calc(2% + 2vw);
@@ -34,7 +34,7 @@ body main{
   background-color: rgba(67,67,67, 0.9);
   border-radius: 10%;
   font-size:calc(2vw);
-  max-height: 50%;
+  max-height: 30%;
   padding: 10%;
 
   color:#26ab89

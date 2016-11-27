@@ -27,20 +27,6 @@ loadjscssfile("javaScript/functionsAndObjectsIndex.js","js");
 
 document.onreadystatechange = function () {
    if (document.readyState == "complete") {
-     //set name of the user
-     var user = localStorage.getItem("user");
-
-     var userElement = document.getElementById("user");
-     if(userElement){
-
-       document.getElementById("user").innerHTML =
-            user === undefined ? "Marinko" : user;
-
-      }else{
-        if(user){
-          window.location = "mainPageLoged.html";
-        }
-      }
 
    // document is ready. Do your stuff here
    /**scrolling header movement*/
@@ -99,39 +85,6 @@ document.onreadystatechange = function () {
         lastScrollTop = st;
     }
 
-    //***Login apear and disapear due to the click.*/
-    if(document.getElementsByClassName("loginRegister")[0] !== undefined){
-
-        document.getElementsByClassName("loginLink")[0].addEventListener('click'
-                  ,appearLoginSection,false);
-    }
-    if(document.getElementsByClassName("logoutLink")[0] !== undefined){
-
-        document.getElementsByClassName("logoutLink")[0].addEventListener('click'
-                  ,function(){
-                    localStorage.clear();
-                  },false);
-    }
-
-    /**Set start of the game when the Play button is clicked.*/
-    if(document.getElementById("playLink") !== null){
-      document.getElementById("playLink").addEventListener("click",
-                setTheStartOftheGame,false);
-              }
-
-    /////////web socket alert.
-    var loginBtn = document.getElementById("loginBtn");
-    if(loginBtn){
-      eventLoginBtn = loginBtn.addEventListener("click",
-              loginSubmitAction,false);////provjeraaaa.
-    }
-
-    var registerBtn = document.getElementById("registerBtn");
-    if(registerBtn){
-
-      eventRegisterBtn = registerBtn.addEventListener("click",
-              registerSubmitAction,false);////provjeraaaa.
-    }
   }
 
 

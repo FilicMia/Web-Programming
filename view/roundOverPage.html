@@ -3,6 +3,8 @@
   <head >
     <meta charset="utf-8">
     <title>Card Game</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' wss://echo.websocket.org/ https:">
     <meta name="author" content="Mia Filić">
 
     <link rel="stylesheet" href="css/stylesRoundOver.css?v=1.0">
@@ -12,7 +14,7 @@
 
     <script type = "text/javaScript" src = "javaScript/roundOver.js">
     </script>
-  <head/>
+  </head>
 
   <body>
     <h1>Thank you for playing</h1><!-- Pop up window. -->
@@ -26,9 +28,9 @@
             <h2>Game over!</h2>
             <a class="close" href="#popup1">&times;</a>
             <div class="content">
-              <p>Thank you for playing.</p>
               <p>Winner is <span id="winner"></span>.</p>
 
+            </div>
         </div>
     </div>
   </body>
