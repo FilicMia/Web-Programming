@@ -58,6 +58,8 @@ The cards avaliable are detected due to the
 computerChose = function() {
   var cards = briscolaPlay.hisCards.reduce(function(a, v, i) { if (v!==-1) a.push(i); return a; }, []);
   console.log(cards);
+  /////THIS IS THE FUNCTION TO CHANGE TO
+  ///////CHANGE HOW WILL THE COMPUTER PLAY
   return cards[getRandomInt(0,cards.length)];
 }
 
