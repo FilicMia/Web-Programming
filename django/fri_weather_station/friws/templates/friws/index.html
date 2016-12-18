@@ -14,8 +14,11 @@
         <a href="/"><img src="{% static 'friws/logo.svg' %}" alt="logo"/></a>
         <span>FRI vremenska postaja</span>
         <!--login forma-->
-        <form>
-        </form>  
+        <form method="POST" action="#" class="header-links">
+         {% csrf_token %} <!-- 2. rjesava csrf gresku-->
+         {{ loginForm.as_table }}
+         <input type="submit" value="Login" />
+        </form>
       </div>
       <div class="spanner"></div>
     </header>

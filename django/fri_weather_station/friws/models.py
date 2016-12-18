@@ -11,6 +11,8 @@ class Article(models.Model):
     content = models.TextField()
     pub_date = models.DateTimeField( default=datetime.now )
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    def __unicode__(self):              # __unicode__ on Python 2
+        return self.title
 
 class Comment(models.Model):
   comment = models.TextField()
@@ -18,3 +20,5 @@ class Comment(models.Model):
   pub_date = models.DateTimeField( default=datetime.now )
   article = models.ForeignKey( Article, on_delete=models.CASCADE )
   author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+  def __unicode__(self):              # __unicode__ on Python 2
+      return self.comment
