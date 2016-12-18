@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Card Game</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' wss://echo.websocket.org/ https: file:">
+    <meta name="author" content="Mia FIlić">
+
+    <link rel="stylesheet" href="{% static 'briscola/css/popupStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'briscola/css/styles.css' %}">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+    <script type = "text/javaScript" src = "javaScript/main.js"></script>
+
+  </head>
+
+  <body>
+    <header class="nav-down" id = "headerID">
+      <nav id="list1">
+         <ul>
+
+           <li class="loginLink"><a href="#">Login to start playing</a></li>
+            <li id="proba"><a href="#howToPlay">Rules</a></li>
+            <li><a href="moreAboutBriscola.html">More</a></li>
+         </ul>
+      </nav>
+    </header>
+    <main>
+
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h2>Wellcome</h2>
+          <!--<a class="close" href="#">&times;</a>-->
+          <div class="content">
+            <p>Hello <span id="userHello"></span>.</p>
+          </div>
+        </div>
+      </div>
+      <div id="popup2" class="overlay">
+        <div class="popup">
+          <h2 id ="registerLoginPopUpTitle">Title</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            <p  id="registerLoginPopUp"></p>
+          </div>
+        </div>
+      </div>
+
+        <img id="upperMain" src="media/PLAY.png" alt="Header main fancy picture" />
+
+        <div class="loginRegister" id="loginRegister">
+
+          <div class="loginRegisterSelection left">
+            <form action="mainPageLoged.html" id="loginForm">
+               <label><b>Username</b></label>
+               <input id = "loginUsername" type="text" pattern="[A-Za-z_0-9]{3,10}" placeholder="Enter Username [A-Za-z_0-9]{3,10}" name="uname" required>
+
+               <label><b>Password</b></label>
+               <input id = "loginPwd" type="password" placeholder="Enter Password" name="psw" required>
+
+               <button type="submit" id="loginBtn">Login</button>
+            </form>
+          </div>
+
+          <div class="loginRegisterSelection right">
+            <form action="index.html">
+               <label><b>Username</b></label>
+               <input id="registerUsername" type="text" placeholder="Enter Username" pattern="[A-Za-z_0-9]{3,10}" name="uname" required>
+
+               <label><b>Password</b></label>
+               <input id="registerPwd" type="password" minlength = "4" placeholder="Enter Password" name="psw" required>
+
+               <label><b>E-mail</b></label>
+               <input id="registerEmail" type="email" placeholder="Enter email: ivo@domena.com" name="email" required>
+
+               <button type="submit" id = "registerBtn">Register</button>
+            </form>
+          </div>
+        </div>
+
+        <article class="howToPlay" id="howToPlay">
+          <div class="row">
+
+          <div class="text upper left">
+            <p>
+              Briscola is often played with Italian cards with suits of
+                swords (spade), clubs (bastoni), cups (coppe) and coins (danari).
+                In this case the cards rank from the highest to the lowest
+                is ace, three, King (re), Horse (cavallo),
+                Jack (fante), 7, 6, 5, 4, 2.<br/>
+
+              Also, the cards have a point value:
+            </p>
+            <ul id="cardPoints">
+              <li>Ace 	<span class="points">11 points</span></li>
+              <li>Three 	<span class="points">10 points</span></li>
+              <li>King 	<span class="points">4 points</span></li>
+              <li>Queen 	<span class="points">3 points</span></li>
+              <li>Jack 	<span class="points">2 points</span></li>
+            </ul>
+
+            <br/>
+            <p>The remaining cards have no point value.</p>
+            <p>
+              As you see, the total value of cards in the deck adds up to 120
+              points. The player which scores at least 61 points in a game wins.
+              Games can end in a draw when both reach the same point total (60).
+
+            </p>
+          </div>
+
+          <div class="upper right">
+            <h3>HOW TO play Briscola?</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="text down left">
+            <p>
+              The computer shuffles the deck and deals three cards to each player.
+              It then takes a card (the seventh, in this case) and puts it face up
+              under the pile of undealt cards, which are placed face down.
+              The face-up card suit defines which will be the Briscola suit
+              for the game (adut).
+              The Briscola suit is the trump suit, i.e. the suit which always takes
+              all other cards, card ranking notwithstanding.
+
+             The game starts. The first to play is the player (A).
+           </p>
+           <ol>
+             <li>A leads one of his three cards, face up.</li>
+             <li>B plays one of his cards.</li>
+           </ol>
+           <p>
+             B wins or loses the trick according to these three simple rules:
+            </p>
+            <ul>
+              <li> If B plays a card of the same suit as the card led by A,
+                then the trick is won by whoever played the higher card - the winner
+                takes both cards away, and puts them, face down, in a pile near him.</li>
+              <li>
+                If B plays a card which has a different suit from the card which A
+                led, but neither card is a Briscola (trump), A wins the trick, and
+                the cards will go to A, even if B's card was of higher rank.
+              </li>
+              <li>
+                If B plays a card of a different suit from A's, and one of the cards
+                is a Briscola (trump), then the player of the Briscola wins the trick.
+              </li>
+            </ul>
+            <p>Example (Briscola is the four of spades):</p>
+            <ul>
+               <li>Player A leads the 5 of clubs.</li>
+               <li>Player B plays the ace of clubs. B takes the trick (Rule 1).</li>
+
+               <li>Player A leads the 5 of hearts.</li>
+               <li>Player B plays the King of clubs. Player A takes the trick (Rule 2)</li>
+
+               <li>Player A leads the ace of diamonds.</li>
+               <li>Player B plays 6 of spades (briscola). He wins the round (Rule 3).</li>
+            </ul>
+            <p class="note">
+             Note that Briscola is unlike many card games, in that there is no
+             obligation for the second player to play a card of the same suit as the
+             first card or to trump it, just because he can. The second player is
+             free to play any of his cards.
+           </p>
+           <p>
+            Note that if both players play a briscola, rule 1 dictates that the
+            higher ranking card wins.
+           </p>
+
+           <p>After each trick, each player draws a card from the pile of undealt
+             cards. The winner of the trick draws first, followed by the loser.
+             The player who won the trick then leads to the next one.
+           </p>
+
+           <p>Eventually the undealt cards will be used up, and at this point the
+              loser of the trick just played will draw the face up Briscola card.
+              The game then continues, without drawing cards, until all the cards
+              have been played.
+           </p>
+
+           <p>At the end, each player takes the pile of cards he won in tricks during
+              the game, and counts up the points according to the point scale shown
+              above. The player with more points wins, or if each has 60, it is a draw.
+           </p>
+          </div>
+          <div class="video picture down right">
+              <video id = "headerVideo" controls preload="none" autoplay>
+                <source src="media/ExampleOfPlayGame.mp4" type="video/mp4">
+                <p>If you are reading this, it is because your browser
+                  does not support the HTML5 video element.</p>
+              </video>
+              <img id="howToPlayImage" src="media/triestine_comics.png" alt="Header fancy picture" />
+
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <p>By: Ko je Ovo</p>
+    </footer>
+  </body>
+</html>

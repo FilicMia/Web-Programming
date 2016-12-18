@@ -1,0 +1,40 @@
+header, footer {
+  background:#00ff00;
+  margin:0;
+  display:flex;
+}
+.header-links {
+  float:right;
+  clear:right;
+}
+body {
+  display:flex;
+  flex-flow:column;
+
+  min-height:100vh;
+  margin:0;
+  background:grey;
+}
+.centered {
+  width:960px;
+  /*flex-basis: -webkit-fill-available;
+  flex-basis: -moz-available;
+  flex-basis: fill;*/
+}
+.content {
+  min-height:0;
+  flex-grow:1;
+  
+  display:flex;
+}
+article form {
+    display:flex;
+    flex-flow:column;
+}
+.main {
+  display:flex;
+  background:yellow;
+}
+.spanner {
+    flex-grow:1;
+}
