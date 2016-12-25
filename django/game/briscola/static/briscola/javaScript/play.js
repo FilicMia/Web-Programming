@@ -1,3 +1,6 @@
+staticBegin = "/static/";
+staticEnd = "";
+
 /**
 Function dynamically loading css file or js file.
 @param filename name of the file to be inported
@@ -7,17 +10,19 @@ function loadjscssfile(filename, filetype){
     if (filetype=="js"){ //if filename is a external JavaScript file
         var fileref=document.createElement('script')
         fileref.setAttribute("type","text/javascript")
-        fileref.setAttribute("src", filename)
+        fileref.setAttribute("src", staticBegin+filename+staticEnd)
     }
     else if (filetype=="css"){ //if filename is an external CSS file
         var fileref=document.createElement("link")
         fileref.setAttribute("rel", "stylesheet")
         fileref.setAttribute("type", "text/css")
-        fileref.setAttribute("href", filename)
+        fileref.setAttribute("href", staticBegin+filename+staticEnd)
     }
     if (typeof fileref!="undefined")
         document.getElementsByTagName("head")[0].appendChild(fileref)
 }
+//static files path
+staticFilesPath = staticBegin + "briscola/"
 
 /**
 Getting the uniformly random integer from the range [min,max>.
@@ -407,7 +412,7 @@ Storage.prototype.getObj = function(key) {
 */
 function BriscolaPlay(){
   this.deckSize = 40;
-  this.cardsPath = "media/pictures/slika";
+  this.cardsPath = "../static/briscola/media/pictures/slika";
   this.cardsLeft = this.deckSize;
   this.mixedCards = [...Array(this.deckSize).keys()];
   this.cardPoints = [
@@ -584,7 +589,7 @@ continueGame = function(){
         card[i].addEventListener('click', playCardEventWrapper, false);
         compCardsInHand ++;
     } else {
-      card[i].src = "../media/pictures/pic.jpg";
+      card[i].src = "../static/briscola/media/pictures/pic.jpg";
       addClass(card[i],"addCard");
       removeClass(card[i],"playCard");
     }
@@ -601,7 +606,7 @@ continueGame = function(){
         addClass(card[i],"playCard");
 
     } else {
-      card[i].src = "../media/pictures/pic.jpg";
+      card[i].src = "../static/briscola/media/pictures/pic.jpg";
       addClass(card[i],"addCard");
       removeClass(card[i],"playCard");
     }
@@ -694,7 +699,7 @@ waitAbitPopup = function(){
 
 ///////////////////////////////////////////////
 ///////////Main /////////////////////////////
-loadjscssfile("javaScript/classFunctions.js","js");
+loadjscssfile("briscola/javaScript/classFunctions.js","js");
 /**The game. */
 var briscolaPlay = new BriscolaPlay();
 ////////////////////////////////////////////////////////////

@@ -1,3 +1,6 @@
+staticBegin = "/static/";
+staticEnd = "";
+
 /**
 Function dynamically loading css file or js file.
 @param filename name of the file to be inported
@@ -7,23 +10,25 @@ function loadjscssfile(filename, filetype){
     if (filetype=="js"){ //if filename is a external JavaScript file
         var fileref=document.createElement('script')
         fileref.setAttribute("type","text/javascript")
-        fileref.setAttribute("src", filename)
+        fileref.setAttribute("src", staticBegin+filename+staticEnd)
     }
     else if (filetype=="css"){ //if filename is an external CSS file
         var fileref=document.createElement("link")
         fileref.setAttribute("rel", "stylesheet")
         fileref.setAttribute("type", "text/css")
-        fileref.setAttribute("href", filename)
+        fileref.setAttribute("href", staticBegin+filename+staticEnd)
     }
     if (typeof fileref!="undefined")
         document.getElementsByTagName("head")[0].appendChild(fileref)
 }
 
-
 ////////////////////////////////////////////////////////
 //do after ready
-loadjscssfile("javaScript/classFunctions.js","js");
-loadjscssfile("javaScript/functionsAndObjectsIndex.js","js");
+//path to the static files
+staticFilesPath = "briscola/"
+
+loadjscssfile(staticFilesPath+"javaScript/classFunctions.js","js");
+loadjscssfile(staticFilesPath+"javaScript/functionsAndObjectsIndex.js","js");
 
 document.onreadystatechange = function () {
    if (document.readyState == "complete") {

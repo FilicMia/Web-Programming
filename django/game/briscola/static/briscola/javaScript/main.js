@@ -1,3 +1,6 @@
+staticBegin = "/static/";
+staticEnd = "";
+
 /**
 Function dynamically loading css file or js file.
 @param filename name of the file to be inported
@@ -7,13 +10,13 @@ function loadjscssfile(filename, filetype){
     if (filetype=="js"){ //if filename is a external JavaScript file
         var fileref=document.createElement('script')
         fileref.setAttribute("type","text/javascript")
-        fileref.setAttribute("src", filename)
+        fileref.setAttribute("src", staticBegin+filename+staticEnd)
     }
     else if (filetype=="css"){ //if filename is an external CSS file
         var fileref=document.createElement("link")
         fileref.setAttribute("rel", "stylesheet")
         fileref.setAttribute("type", "text/css")
-        fileref.setAttribute("href", filename)
+        fileref.setAttribute("href", staticBegin+filename+staticEnd)
     }
     if (typeof fileref!="undefined")
         document.getElementsByTagName("head")[0].appendChild(fileref)
@@ -120,20 +123,6 @@ document.onreadystatechange = function () {
       document.getElementById("playLink").addEventListener("click",
                 setTheStartOftheGame,false);
               }
-
-    /////////web socket alert.
-    var loginBtn = document.getElementById("loginBtn");
-    if(loginBtn){
-      eventLoginBtn = loginBtn.addEventListener("click",
-              loginSubmitAction,false);////provjeraaaa.
-    }
-
-    var registerBtn = document.getElementById("registerBtn");
-    if(registerBtn){
-
-      eventRegisterBtn = registerBtn.addEventListener("click",
-              registerSubmitAction,false);////provjeraaaa.
-    }
   }
 
 

@@ -25,21 +25,18 @@
 
            <li class="loginLink"><a href="#">Login to start playing</a></li>
             <li id="proba"><a href="#howToPlay">Rules</a></li>
-            <li><a href="moreAboutBriscola.html">More</a></li>
+            <li><a href="moreAboutBriscola/">More</a></li>
          </ul>
       </nav>
     </header>
     <main>
 
-      <div id="popup1" class="overlay">
-        <div class="popup">
-          <h2>Wellcome</h2>
-          <!--<a class="close" href="#">&times;</a>-->
-          <div class="content">
-            <p>Hello <span id="userHello"></span>.</p>
-          </div>
-        </div>
-      </div>
+      <div>Hello <div id="userHello">
+        {% for user in users %}
+          <h2>{{ user.password }}</h2>
+          <p>{{ user.username }}</p>
+        {% endfor %}
+      </div>.</div>
       <div id="popup2" class="overlay">
         <div class="popup">
           <h2 id ="registerLoginPopUpTitle">Title</h2>
@@ -55,15 +52,17 @@
         <div class="loginRegister" id="loginRegister">
 
           <div class="loginRegisterSelection left">
-            <form action="mainPageLoged.html" id="loginForm">
-               <label><b>Username</b></label>
-               <input id = "loginUsername" type="text" pattern="[A-Za-z_0-9]{3,10}" placeholder="Enter Username [A-Za-z_0-9]{3,10}" name="uname" required>
-
-               <label><b>Password</b></label>
-               <input id = "loginPwd" type="password" placeholder="Enter Password" name="psw" required>
-
-               <button type="submit" id="loginBtn">Login</button>
+            {% if user.is_authenticated %}
+            <span class="header-links">Logged in as {{ user.username }}.
+              <a href="{% url 'logout' %}">Logout</a>
+            </span>
+            {% else %}
+            <form method="POST" action="#" class="loginForm">
+             {% csrf_token %} <!-- 2. rjesava csrf gresku-->
+             {{ loginForm.as_table }}
+             <input type="submit" id = "loginBtn" value="login"/>
             </form>
+            {% endif %}
           </div>
 
           <div class="loginRegisterSelection right">

@@ -2,4 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-	return render(request,'friws/index.html', {'victim':'happy people'})
+	return render(request,'briscola/index.html', {'victim':'happy people'})
+def moreAboutBriscola(request):
+	return render(request,'briscola/moreAboutBriscola.html', {'victim':'happy people'})
+def playPage(request):
+	return render(request,'briscola/playPage.html', {'victim':'happy people'})
