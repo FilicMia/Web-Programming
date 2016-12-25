@@ -24,17 +24,23 @@ body {
 .content {
   min-height:0;
   flex-grow:1;
-  
+
   display:flex;
 }
-article form {
+article form,form {
     display:flex;
     flex-flow:column;
 }
 .main {
   display:flex;
+  flex-flow: column;
   background:yellow;
 }
 .spanner {
     flex-grow:1;
+}
+
+.under{
+  display: flex;
+  flex-flow: row;
 }

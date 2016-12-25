@@ -13,12 +13,17 @@
      <div class="centered">
         <a href="/"><img src="{% static 'friws/logo.svg' %}" alt="logo"/></a>
         <span>FRI vremenska postaja</span>
-        <!--login forma-->
+        {% if user.is_authenticated %}
+        <span class="header-links">Logged in as {{ user.username }}.
+          <a href="{% url 'logout' %}">Logout</a>
+        </span>
+        {% else %}
         <form method="POST" action="#" class="header-links">
          {% csrf_token %} <!-- 2. rjesava csrf gresku-->
          {{ loginForm.as_table }}
          <input type="submit" value="Login" />
         </form>
+        {% endif %}
       </div>
       <div class="spanner"></div>
     </header>
@@ -33,14 +38,26 @@
             <li><a href="api.html">API</a></li>
           </ul>
         </nav>
-        <section class="">
-
-        </section>
+        <div class="under">
+          <!--<section class="">
+            <h1>News </h1>
+              {% for article in articles %}<!--What -->
+            <!--  {% include 'friws/articleTemplate.html' %}
+              {% endfor %}
+          </section>-->
+          <section class="">
+            {% block content %}
+              lalalal
+            {% endblock %}
+          </section>
+        </div>
       </div>
       <div class="spanner"></div>
     </div>
     <footer>
-      <div class="spanner"></div>
+      <div class="spanner">
+        {{ uuus }}
+      </div>
       <div class="centered">
         <a href="/legal.html">Pravna obvestila</a> |
         <a href="/authors.html">Avtor strani</a>

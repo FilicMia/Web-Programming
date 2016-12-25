@@ -1,0 +1,8 @@
+{% extends 'friws/index.html' %}
+
+{% block content %}
+  <h1>News </h1>
+  {% for article in articles %}
+    {% include 'friws/articleTemplate.html' %}
+  {% endfor %}
+{% endblock %}

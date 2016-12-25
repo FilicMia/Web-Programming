@@ -14,7 +14,7 @@
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
-    <script type = "text/javaScript" src = "javaScript/main.js"></script>
+    <script type = "text/javaScript" src = "{% static 'briscola/javaScript/main.js' %}"></script>
 
   </head>
 
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-        <img id="upperMain" src="media/PLAY.png" alt="Header main fancy picture" />
+        <img id="upperMain" src="{% static 'briscola/media/PLAY.png' %}" alt="Header main fancy picture" />
 
         <div class="loginRegister" id="loginRegister">
 
@@ -192,11 +192,11 @@
           </div>
           <div class="video picture down right">
               <video id = "headerVideo" controls preload="none" autoplay>
-                <source src="media/ExampleOfPlayGame.mp4" type="video/mp4">
+                <source src="{% static 'briscola/media/ExampleOfPlayGame.mp4' %}" type="video/mp4">
                 <p>If you are reading this, it is because your browser
                   does not support the HTML5 video element.</p>
               </video>
-              <img id="howToPlayImage" src="media/triestine_comics.png" alt="Header fancy picture" />
+              <img id="howToPlayImage" src="{% static 'briscola/media/triestine_comics.png' %}" alt="Header fancy picture" />
 
           </div>
         </div>
