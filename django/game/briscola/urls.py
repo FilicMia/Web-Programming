@@ -20,4 +20,5 @@ urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^moreAboutBriscola/$', views.moreAboutBriscola, name='moreAboutBriscola'),
 	url(r'^play/$', views.play, name='play'),
+    url(r'^logout/',views.logoutUser,name="logout"),
 ]

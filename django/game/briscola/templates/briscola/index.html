@@ -22,16 +22,26 @@
     <header class="nav-down" id = "headerID">
       <nav id="list1">
          <ul>
+           {% if user.is_authenticated %}
+           <li><a href="{% url 'play' %}" id="playLink">Play</a></li>
+            <!--About the project__ at the end can be as
+          well the link to git source code.-->
+            <li><a href="#howToPlay">Rules</a></li>
+            <li><a href="moreAboutBriscola.html">More</a></li>
+            <li class="logoutLink"><a href="{% url 'logout' %}"><span id="user">{{ user }}</span>
+              , click to logout!</a></li>
+           {% else %}
+           <li class="loginLink"><a href="#loginRegister">Login to start playing</a></li>
+           <li id="proba"><a href="#howToPlay">Rules</a></li>
+           <li><a href="moreAboutBriscola/">More</a></li>
+           {% endif %}
 
-           <li class="loginLink"><a href="#">Login to start playing</a></li>
-            <li id="proba"><a href="#howToPlay">Rules</a></li>
-            <li><a href="moreAboutBriscola/">More</a></li>
          </ul>
       </nav>
     </header>
     <main>
 
-      <div>Hello <div id="userHello">
+      <div>Hello {{ user }}<div id="userHello">
         {% for user in users %}
           <h2>{{ user.password }}</h2>
           <p>{{ user.username }}</p>

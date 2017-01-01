@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.models import User
 from .forms import LoginForm
+from django.contrib.auth.decorators import login_required
 
 from django.http import HttpResponse
 
@@ -27,5 +28,10 @@ def index(request):
 	return render(request,'briscola/index.html', context)
 def moreAboutBriscola(request):
 	return render(request,'briscola/moreAboutBriscola.html', {'victim':'happy people'})
+
+@login_required(login_url='index')
 def play(request):
 	return render(request,'briscola/playPage.html', {'victim':'happy people'})
+def logoutUser(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))

@@ -33,19 +33,7 @@ loadjscssfile(staticFilesPath+"javaScript/functionsAndObjectsIndex.js","js");
 document.onreadystatechange = function () {
    if (document.readyState == "complete") {
      //set name of the user
-     var user = localStorage.getItem("user");
-
-     var userElement = document.getElementById("user");
-     if(userElement){
-
-       document.getElementById("user").innerHTML =
-            user === undefined ? "Marinko" : user;
-
-      }else{
-        if(user){
-          window.location = "mainPageLoged.html";
-        }
-      }
+     
 
    // document is ready. Do your stuff here
    /**scrolling header movement*/
