@@ -154,8 +154,8 @@ div.loginRegister:target{
     border: 0.1px solid #43D1AF;
 }
 
-.loginRegisterSelection button{
-
+.loginRegisterSelection button,
+.loginRegisterSelection input[type="submit"]{
     font-size:calc(3% + 1.75vw);
     box-sizing: border-box;
     width: 100%;
@@ -168,7 +168,7 @@ div.loginRegister:target{
     color: #fff;
 }
 
-.loginRegisterSelection button:hover{
+.loginRegisterSelection button:hover, .loginRegisterSelection input[type="submit"]:hover{
     background: #2F4F4F;
 }
 
