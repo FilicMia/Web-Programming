@@ -1,0 +1,17 @@
+{% extends "briscola/index2.html" %}
+{% load static %}
+{% block content %}
+<div>
+  {% for comment in comments %}
+  <div class = "comment">
+    <p>{{ comment.comment }}</p>
+    <p class="author">Author {{ comment.author.username }}, on {{ comment.pub_date }}</br>
+    {% if user.is_superuser or comment.author == user %}
+        <a href="{% url 'commentEdit' comment.id %}">Edit</a>
+        <a href="{% url 'commentDelete' comment.id %}">Delete</a>
+    {% endif %}
+  </p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

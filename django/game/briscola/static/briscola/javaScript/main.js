@@ -33,11 +33,11 @@ loadjscssfile(staticFilesPath+"javaScript/functionsAndObjectsIndex.js","js");
 document.onreadystatechange = function () {
    if (document.readyState == "complete") {
      //set name of the user
-     
+
 
    // document is ready. Do your stuff here
    /**scrolling header movement*/
-    var didScroll;
+    var didScroll = true;
 
     //definition of needed variables
     var lastScrollTop = 0;

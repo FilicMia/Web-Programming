@@ -154,7 +154,15 @@ div.loginRegister:target{
     border: 0.1px solid #43D1AF;
 }
 
+.loginRegisterSelection a{
+  position: relative;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  text-decoration: none;
+}
+
 .loginRegisterSelection button,
+.loginRegisterSelection a,
 .loginRegisterSelection input[type="submit"]{
     font-size:calc(3% + 1.75vw);
     box-sizing: border-box;
@@ -168,7 +176,9 @@ div.loginRegister:target{
     color: #fff;
 }
 
-.loginRegisterSelection button:hover, .loginRegisterSelection input[type="submit"]:hover{
+.loginRegisterSelection button:hover,
+.loginRegisterSelection a:hover,
+.loginRegisterSelection input[type="submit"]:hover{
     background: #2F4F4F;
 }
 
@@ -299,6 +309,11 @@ article div.text{
   margin-left: 5%;
   text-align: center;
   text-shadow: 0 0.5px 0.5px #fff;
+ }
+
+ .comment > p.author,.comment > p a{
+   font-size:calc(3% + 1vw);
+   color: #828384;
  }
 /*********************Flex properties******************************/
 body{

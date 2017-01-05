@@ -1,0 +1,25 @@
+{% extends "briscola/index.html" %}
+{% block linkName %}
+   Login to start playing
+{% endblock %}
+{% block loginRegisterLeft %}
+  {% if user.is_authenticated %}
+  <span class="header-links">Logged in as {{ user.username }}.
+    <a href="{% url 'logout' %}">Logout</a>
+  </span>
+  {% else %}
+  <form method="POST" action="#" class="loginForm">
+   {% csrf_token %} <!-- 2. rjesava csrf gresku-->
+   {{ loginForm.as_table }}
+   <input type="submit" id = "loginBtn" value="Login"/>
+  </form>
+  {% endif %}
+{% endblock %}
+
+{% block loginRegisterRight %}
+  {% if user.is_authenticated %}
+
+  {% else %}
+  <a href="{% url 'register' %}#loginRegister">Register</a>
+  {% endif %}
+{% endblock %}

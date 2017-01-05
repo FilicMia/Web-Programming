@@ -21,4 +21,9 @@ urlpatterns = [
 	url(r'^moreAboutBriscola/$', views.moreAboutBriscola, name='moreAboutBriscola'),
 	url(r'^play/$', views.play, name='play'),
     url(r'^logout/',views.logoutUser,name="logout"),
+    url(r'^register/$', views.register , name="register"),
+    url(r'^register/success/$', views.register_success, name="registration"),
+    url(r'^comments/$', views.comments, name="comments"),
+    url(r'^comments/(?P<comment_id>[0-9]+)/edit/$', views.commentEdit, name='commentEdit'),
+    url(r'^comments/(?P<comment_id>[0-9]+)/delete/$', views.commentDelete, name='commentDelete'),
 ]

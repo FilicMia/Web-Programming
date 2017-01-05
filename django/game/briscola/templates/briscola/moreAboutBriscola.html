@@ -1,96 +1,58 @@
-{% load static%}
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Card Game</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' wss://echo.websocket.org/ https: file:">
-    <meta name="author" content="Mia FIlić">
+{% extends "briscola/index2.html" %}
+{% load static %}
+{% block content %}
+<div>
+  <p>Most parts of Italy have their own regional pattern with latin
+  or French suits. Latin suited cards, with suits of swords (spade),
+  batons (bastoni), cups (coppe) and coins (denari)
+  (<span>used in Briscola</span>), are prevalent in
+  the North-East (where the pip cards have curved swords and straight
+  batons which cross in a trellis), and in the South (where the pip
+  cards have short separate swords and batons). Elsewhere the regional
+  patterns are French suited, with suits of spades (picche), clubs
+   (fiori), diamonds (quadri) and hearts (cuori). Most of the regional
+  cards come as 40 card packs; 52 card versions of the North-Eastern
+  Italian regional patterns are also made for certain games.
 
-    <link rel="stylesheet" href="{% static 'briscola/css/popupStyle.css' %}">
-    <link rel="stylesheet" href="{% static 'briscola/css/styles.css' %}">
+  Various forms of Italian suited Tarot cards (Tarocchi) are used in
+  Bologna, Piemonte and a few places in Sicily. The international
+  French suited 52 card pack is also widely available. German suited
+  cards are used in the German speaking South Tyrol. The 40 card single
+  suited Cuccù pack is used in some regions in the north.</p>
+</div>
+<div>
+  <p>Italian 40 card deck is used for playing Briscola.
+  It is often
+  played with Italian cards, which have suits of coins, cups, batons
+  and swords, but you may play using a standard international 52-card
+  deck, just by removing the Jokers, eights, nines and tens. The same
+  game is played in the coastal regions of Slovenia and Croatia under
+  the name Briškula.</p>
+</div>
+<img src="{% static 'briscola/media/Triest-Z.jpg' %}" alt="suits" />
+<div>
+  <p class="imageDesc">Italian cards, which have suits of coins, cups, batons
+  and swords.</p>
+</div>
+<div id="links">
+  <p>Some external links:</p>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Briscola">
+      Wiki about Briscola
+    </a>
+    </li>
+    <li>
+      <a href="https://hr.wikipedia.org/wiki/Bri%C5%A1kula">
+        About Briscola(CRO)
+      </a>
+    </li>
+    <li>
+      <a href="http://drustvene-igre.blogspot.si/2013/05/pravila-briskule.html">
+        About Briscola(SLO)
+      </a>
+    </li>
 
-    <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-    <script type = "text/javaScript" src = "{% static 'briscola/javaScript/main.js' %}"></script>
+  </ul>
 
-  </head>
-
-  <body>
-    <header class="nav-down" id = "headerID">
-      <nav id="list1">
-         <ul>
-
-           <li class="loginLink"><a href="/">Play</a></li>
-            <li><a href="/#howToPlay">Rules</a></li>
-            <li><a href="#">More</a></li>
-         </ul>
-      </nav>
-    </header>
-    <main>
-        <img id="upperMain" src="{% static 'briscola/media/PLAY.png' %}" alt="Header main fancy picture" />
-
-        <div class="history" id="history">
-          <div>
-            <p>Most parts of Italy have their own regional pattern with latin
-            or French suits. Latin suited cards, with suits of swords (spade),
-            batons (bastoni), cups (coppe) and coins (denari)
-            (<span>used in Briscola</span>), are prevalent in
-            the North-East (where the pip cards have curved swords and straight
-            batons which cross in a trellis), and in the South (where the pip
-            cards have short separate swords and batons). Elsewhere the regional
-            patterns are French suited, with suits of spades (picche), clubs
-             (fiori), diamonds (quadri) and hearts (cuori). Most of the regional
-            cards come as 40 card packs; 52 card versions of the North-Eastern
-            Italian regional patterns are also made for certain games.
-
-            Various forms of Italian suited Tarot cards (Tarocchi) are used in
-            Bologna, Piemonte and a few places in Sicily. The international
-            French suited 52 card pack is also widely available. German suited
-            cards are used in the German speaking South Tyrol. The 40 card single
-            suited Cuccù pack is used in some regions in the north.</p>
-          </div>
-          <div>
-            <p>Italian 40 card deck is used for playing Briscola.
-            It is often
-            played with Italian cards, which have suits of coins, cups, batons
-            and swords, but you may play using a standard international 52-card
-            deck, just by removing the Jokers, eights, nines and tens. The same
-            game is played in the coastal regions of Slovenia and Croatia under
-            the name Briškula.</p>
-          </div>
-          <img src="{% static 'briscola/media/Triest-Z.jpg' %}" alt="suits" />
-          <div>
-            <p class="imageDesc">Italian cards, which have suits of coins, cups, batons
-            and swords.</p>
-          </div>
-          <div id="links">
-            <p>Some external links:</p>
-            <ul>
-              <li><a href="https://en.wikipedia.org/wiki/Briscola">
-                Wiki about Briscola
-              </a>
-              </li>
-              <li>
-                <a href="https://hr.wikipedia.org/wiki/Bri%C5%A1kula">
-                  About Briscola(CRO)
-                </a>
-              </li>
-              <li>
-                <a href="http://drustvene-igre.blogspot.si/2013/05/pravila-briskule.html">
-                  About Briscola(SLO)
-                </a>
-              </li>
-
-            </ul>
-
-          </div>
-      </div>
-    </main>
-    <footer>
-      <p>By: Ko je Ovo</p>
-    </footer>
-  </body>
-</html>
+</div>
+{% endblock %}

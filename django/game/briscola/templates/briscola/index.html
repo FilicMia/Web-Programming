@@ -27,13 +27,15 @@
             <!--About the project__ at the end can be as
           well the link to git source code.-->
             <li><a href="#howToPlay">Rules</a></li>
-            <li><a href="moreAboutBriscola.html">More</a></li>
+            <li><a href="{% url 'moreAboutBriscola' %}">More</a></li>
+            <li><a href="{% url 'comments' %}">Comments</a></li>
             <li class="logoutLink"><a href="{% url 'logout' %}"><span id="user">{{ user }}</span>
               , click to logout!</a></li>
            {% else %}
-           <li class="loginLink"><a href="#loginRegister">Login to start playing</a></li>
+           <li class="loginLink"><a href="#loginRegister">{% block linkName %}{% endblock %}</a></li>
            <li id="proba"><a href="#howToPlay">Rules</a></li>
-           <li><a href="moreAboutBriscola/">More</a></li>
+           <li><a href="{% url 'moreAboutBriscola' %}">More</a></li>
+           <li><a href="{% url 'comments' %}">Comments</a></li>
            {% endif %}
 
          </ul>
@@ -47,47 +49,16 @@
           <p>{{ user.username }}</p>
         {% endfor %}
       </div>.</div>
-      <div id="popup2" class="overlay">
-        <div class="popup">
-          <h2 id ="registerLoginPopUpTitle">Title</h2>
-          <a class="close" href="#">&times;</a>
-          <div class="content">
-            <p  id="registerLoginPopUp"></p>
-          </div>
-        </div>
-      </div>
 
         <img id="upperMain" src="{% static 'briscola/media/PLAY.png' %}" alt="Header main fancy picture" />
 
         <div class="loginRegister" id="loginRegister">
 
           <div class="loginRegisterSelection left">
-            {% if user.is_authenticated %}
-            <span class="header-links">Logged in as {{ user.username }}.
-              <a href="{% url 'logout' %}">Logout</a>
-            </span>
-            {% else %}
-            <form method="POST" action="#" class="loginForm">
-             {% csrf_token %} <!-- 2. rjesava csrf gresku-->
-             {{ loginForm.as_table }}
-             <input type="submit" id = "loginBtn" value="login"/>
-            </form>
-            {% endif %}
+            {% block loginRegisterLeft %}{% endblock %}
           </div>
-
           <div class="loginRegisterSelection right">
-            <form action="index.html">
-               <label><b>Username</b></label>
-               <input id="registerUsername" type="text" placeholder="Enter Username" pattern="[A-Za-z_0-9]{3,10}" name="uname" required>
-
-               <label><b>Password</b></label>
-               <input id="registerPwd" type="password" minlength = "4" placeholder="Enter Password" name="psw" required>
-
-               <label><b>E-mail</b></label>
-               <input id="registerEmail" type="email" placeholder="Enter email: ivo@domena.com" name="email" required>
-
-               <button type="submit" id = "registerBtn">Register</button>
-            </form>
+            {% block loginRegisterRight %}{% endblock %}
           </div>
         </div>
 
