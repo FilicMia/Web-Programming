@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FRI vremenska postaja</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'fri_ws_web/style.css' %}">
+  </head>
+  
+  <body>
+    <header>
+     <div class="spanner"></div>
+     <div class="centered">
+        <a href="/"><img src="logo.svg" alt="logo"/></a>
+        <span>FRI vremenska postaja</span>
+        <div class="header-links">
+            {{ user }}
+            {% if user.is_authenticated %}
+            Logged in as {{ user }}
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <form method='POST' action='#'>
+                {% csrf_token %}
+                {{ loginForm.as_table }}
+                 <input type="submit" value="Login" />
+            </form>
+            {% endif %}
+        </div>
+      </div>
+      <div class="spanner"></div>
+    </header>
+    <div class="content">
+      <div class="spanner"></div>
+      <div class="main centered">
+        <nav>
+          <ul>
+            <li><a href="news.html">Novice</a></li>
+            <li><a href="measurements.html">Meritve</a></li>
+            <li><a href="history.html">Zgodovina</a></li>
+            <li><a href="api.html">API</a></li>
+          </ul>
+        </nav>
+        <section class="">
+          <h1>Novice</h1>
+          <h2>Current temperature {{TEMPERATURE}}°C</h2>
+          <article>
+            <h2>Nove slike za RPi</h2>
+            <p>Na voljo so nove slike za Raspberry PI. Omogočajo zajem temperature in vlažnosti na senzorjih DHT-11. Dobite jih tu.</p>
+            <p>Objavil Matevž <time datetime="2016-03-05T19:15">v nedeljo ob 19:15</time>.</p>
+            <div class="comment">
+              <h3>Komentirajte</h3>
+              <form class="article-comment" method="POST" action="/send_comment">
+                <label>Vaše ime: <input type="text" name="user" pattern=".* .*" title="Vpišite dve besedi" placeholder="ime priimek" required /></label>
+                <label>Vaše email: <input type="email" name="user" required /></label>
+                <label>Komentar: <textarea name="message" rows="10" cols="30" placeholder="" required></textarea></label>
+                <label class="no-fixed-width"><input type="checkbox" required />Nisem robot</label>
+                <label><input type="submit" value="Pošlji komentar" /></label>
+              </form>
+            </div>
+          </article>
+          <article>
+            <h2>Delavnica</h2>
+            <p>V torek, 18. prosinca, organiziramo delavnico za pihanje toplega zraka. Vse, ki imate zadovoljivo kapaciteto pljuč in zdravo srce, vabimo, da se udeležite delavnice.</p><p>Pridite, zabavno bo!</p>
+            <p>Objavil Aljoša v <time datetime="2016-01-04T11:15">ponedeljek ob 19:15</time>.</p>
+          </article>
+        </section>
+      </div>
+      <div class="spanner"></div>
+    </div>
+    <footer>
+      <div class="spanner"></div>
+      <div class="centered">
+        <a href="/legal.html">Pravna obvestila</a> |
+        <a href="/authors.html">Avtor strani</a>
+      </div>
+      <div class="spanner"></div>
+    </footer>
+  </body>
+</html> 
