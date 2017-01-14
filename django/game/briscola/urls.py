@@ -20,10 +20,14 @@ urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^moreAboutBriscola/$', views.moreAboutBriscola, name='moreAboutBriscola'),
 	url(r'^play/$', views.play, name='play'),
+    url(r'^roundOver/(?P<winner>[a-zA-Z]+)/$', views.roundOver, name='roundOver'),
+    url(r'^howToPlay/$', views.howToPlay, name='howToPlay'),
     url(r'^logout/',views.logoutUser,name="logout"),
     url(r'^register/$', views.register , name="register"),
     url(r'^register/success/$', views.register_success, name="registration"),
     url(r'^comments/$', views.comments, name="comments"),
     url(r'^comments/(?P<comment_id>[0-9]+)/edit/$', views.commentEdit, name='commentEdit'),
     url(r'^comments/(?P<comment_id>[0-9]+)/delete/$', views.commentDelete, name='commentDelete'),
+    url(r'^comments/add/$', views.commentAdd, name='commentAdd'),
+
 ]

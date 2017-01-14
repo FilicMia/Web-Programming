@@ -125,7 +125,7 @@ playTurn = function(playCardClass = "computer", index = -1){
   addClass(spaceToThrowCard[0],"thrown");
   removeClass(spaceToThrowCard[0], "firstEmptySpace");
 
-  cards[index].src = "../media/pictures/pic.jpg";
+  cards[index].src = "../static/briscola/media/pictures/pic.jpg";
 
   addClass(cards[index], "addCard");
   removeClass(cards[index], "playCard");
@@ -216,7 +216,7 @@ deckCardPull = function(){
   if(briscolaPlay.cardsLeft == 1){
     var deckCard = document.getElementsByClassName("deckCard");
     for(var i = 0; i < deckCard.length; i++){
-      deckCard[i].src = "../media/pictures/pic.jpg";
+      deckCard[i].src = "../static/briscola/media/pictures/pic.jpg";
     }
   }
   if(briscolaPlay.onTurn){
@@ -228,7 +228,7 @@ deckCardPull = function(){
   //remove it from the deck
   if(briscolaPlay.cardsLeft == 0){
     var briscola = document.getElementById("briscola");
-    briscola.src = "../media/pictures/pic.jpg";
+    briscola.src = "../static/briscola/media/pictures/pic.jpg";
   }
 }
 
@@ -358,7 +358,7 @@ sumCards = function(){
       addPlayCardsListeners();
       var thrownCards = document.getElementsByClassName("thrown");
       while(thrownCards.length > 0){
-        thrownCards[0].src = "../media/pictures/pic.jpg";
+        thrownCards[0].src = "../static/briscola/media/pictures/pic.jpg";
         thrownCards[0].removeAttribute("name");
         briscolaPlay.cardsOnTable[parseInt(thrownCards[0].alt)-1] = -1;
         removeClass(thrownCards[0], "thrown");
@@ -371,17 +371,17 @@ sumCards = function(){
 Function which handles job that should be handled when the round is over.
 */
 roundOverFunction = function(){
-  var name = "Marinko";
+  var name = user;
   if(briscolaPlay.result[briscolaPlay.myId] < briscolaPlay.result[briscolaPlay.hisId]){
     name = "Computer";
   }
   if(briscolaPlay.result[briscolaPlay.myId] == briscolaPlay.result[briscolaPlay.hisId]){
     name = undefined;
   }
-  name = localStorage.getItem("user");
+  //name = localStorage.getItem("user");
   localStorage.clear();
   localStorage.setItem("user",name);
-  window.location = './roundOverPage.html?winner=' + name;
+  window.location = '../roundOver/'+ name.trim();
 }
 
 /**
@@ -709,9 +709,7 @@ document.onreadystatechange = function () {
 
     onCloseTabWindowEvent();
   };
-  var user = localStorage.getItem("user");
-  document.getElementsByClassName("playerName")[0].innerHTML =
-       user === undefined ? "Marinko" : user;
+  user = document.getElementsByClassName("playerName")[0].innerHTML;
 
 
    if (document.readyState == "complete") {

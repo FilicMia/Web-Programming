@@ -8,7 +8,7 @@ appearLoginSection = function(e){
   console.log(loginSection.style.display);
   if(loginSection.style.display==="" || loginSection.style.display === "none"){
     loginSection.style.display = "flex";
-    loginSection.style.flexFlow = "row";
+    loginSection.style.flexFlow = "column";
   } else {
     loginSection.style.display = "none";
   }

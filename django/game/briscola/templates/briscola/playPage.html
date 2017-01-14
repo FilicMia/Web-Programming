@@ -9,11 +9,17 @@
     <meta name="author" content="Mia Filić">
 
     <link rel="stylesheet" href="{% static 'briscola/css/popupStyle.css' %}">
-    <link rel="stylesheet" href="{% static 'briscola/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'briscola/css/stylesPlay.css' %}">
+    <link rel="stylesheet" href="{% static 'briscola/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'briscola/css/business-causal.css' %}">
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
     <script type = "text/javaScript" src = "{% static 'briscola/javaScript/play.js' %}">
+    </script>
+    <script type = "text/javaScript" src = "{% static 'briscola/js/jquery.js' %}">
+    </script>
+    <script type = "text/javaScript" src = "{% static 'briscola/js/bootstrap.min.js' %}">
     </script>
   </head>
 
@@ -84,7 +90,7 @@
    --><div class="item right">(3,3)
        <div id="playerInfo">
          <p class="playerName">
-           Marinko
+           {{ user }}
          </p>
          <p class="minePoints">
            0
@@ -95,8 +101,8 @@
     </div>
     </div>
   </main>
-  <footer>
-    <p>By: Ko je Ovo</p>
+  <footer class="row">
+
   </footer>
   </body>
 </html>

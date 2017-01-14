@@ -12,7 +12,7 @@ class Comment(models.Model):
   class Meta:
     permissions = (
       ('edit_comment', 'Can edit the comment'),
-     # ('delete_comment', 'Can delete the comment'),
+     ('create_comment', 'Can create the comment'),
     )
 
   def __unicode__(self):              # __unicode__ on Python 2

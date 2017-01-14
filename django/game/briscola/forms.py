@@ -14,6 +14,7 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField(widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Email address"))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("Password"))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("Password (again)"))
+    randNumber = forms.IntegerField(widget=forms.NumberInput(attrs=dict(required=True, max_length=1)) ,label=_("Random number (0-9)"), error_messages={ 'invalid': _("This number is just one integer. Please provide one such a number. Do not be afraid! :D") })
     #server validation of data
     def clean_username(self):
         try:

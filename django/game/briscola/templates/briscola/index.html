@@ -1,189 +1,75 @@
+{% extends "briscola/indexTemplate.html" %}
 {% load static %}
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Card Game</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' wss://echo.websocket.org/ https: file:">
-    <meta name="author" content="Mia FIlić">
 
-    <link rel="stylesheet" href="{% static 'briscola/css/popupStyle.css' %}">
-    <link rel="stylesheet" href="{% static 'briscola/css/styles.css' %}">
+{% load app_filters %}
 
-    <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-    <script type = "text/javaScript" src = "{% static 'briscola/javaScript/main.js' %}"></script>
+{% block contentUp %}
+<div class="brand">Briscola play</div>
+<div class="address-bar">Ljubljana, Slovenia</div>
+{% endblock %}
 
-  </head>
+{% block content %}
+<div class="row">
+      <div class="box">
+          <div class="col-lg-12 text-center">
+              <div id="carousel-example-generic" class="carousel slide">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators hidden-xs">
+                      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ol>
 
-  <body>
-    <header class="nav-down" id = "headerID">
-      <nav id="list1">
-         <ul>
-           {% if user.is_authenticated %}
-           <li><a href="{% url 'play' %}" id="playLink">Play</a></li>
-            <!--About the project__ at the end can be as
-          well the link to git source code.-->
-            <li><a href="#howToPlay">Rules</a></li>
-            <li><a href="{% url 'moreAboutBriscola' %}">More</a></li>
-            <li><a href="{% url 'comments' %}">Comments</a></li>
-            <li class="logoutLink"><a href="{% url 'logout' %}"><span id="user">{{ user }}</span>
-              , click to logout!</a></li>
-           {% else %}
-           <li class="loginLink"><a href="#loginRegister">{% block linkName %}{% endblock %}</a></li>
-           <li id="proba"><a href="#howToPlay">Rules</a></li>
-           <li><a href="{% url 'moreAboutBriscola' %}">More</a></li>
-           <li><a href="{% url 'comments' %}">Comments</a></li>
-           {% endif %}
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                      <div class="item active">
+                          <img class="img-responsive img-full" src="{% static 'briscola/media/PLAY.png' %}" alt="">
+                      </div>
+                      <div class="item">
+                          <img class="img-responsive img-full" src="{% static 'briscola/media/pplaying.jpg' %}" alt="">
+                      </div>
+                      <div class="item">
+                          <img class="img-responsive img-full" src="{% static 'briscola/media/stil2.jpg' %}" alt="">
+                      </div>
+                  </div>
 
-         </ul>
-      </nav>
-    </header>
-    <main>
-
-      <div>Hello {{ user }}<div id="userHello">
-        {% for user in users %}
-          <h2>{{ user.password }}</h2>
-          <p>{{ user.username }}</p>
-        {% endfor %}
-      </div>.</div>
-
-        <img id="upperMain" src="{% static 'briscola/media/PLAY.png' %}" alt="Header main fancy picture" />
-
-        <div class="loginRegister" id="loginRegister">
-
-          <div class="loginRegisterSelection left">
-            {% block loginRegisterLeft %}{% endblock %}
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                      <span class="icon-prev"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                      <span class="icon-next"></span>
+                  </a>
+              </div>
+              <h2 class="brand-before">
+                  <small>Welcome to</small>
+              </h2>
+              <h1 class="brand-name">Briscola play</h1>
+              <hr class="tagline-divider">
+              <h2>
+                  <small>By
+                      <strong>Mia Filić</strong>
+                  </small>
+              </h2>
           </div>
-          <div class="loginRegisterSelection right">
-            {% block loginRegisterRight %}{% endblock %}
-          </div>
-        </div>
+      </div>
+  </div>
+<div class="loginRegister row" id="loginRegister">
 
-        <article class="howToPlay" id="howToPlay">
-          <div class="row">
+  <div class="loginRegisterSelection left">
 
-          <div class="text upper left">
-            <p>
-              Briscola is often played with Italian cards with suits of
-                swords (spade), clubs (bastoni), cups (coppe) and coins (danari).
-                In this case the cards rank from the highest to the lowest
-                is ace, three, King (re), Horse (cavallo),
-                Jack (fante), 7, 6, 5, 4, 2.<br/>
+      <div class="box">
+        {% block loginRegisterLeft %}{% endblock %}
+     </div>
+   </div>
 
-              Also, the cards have a point value:
-            </p>
-            <ul id="cardPoints">
-              <li>Ace 	<span class="points">11 points</span></li>
-              <li>Three 	<span class="points">10 points</span></li>
-              <li>King 	<span class="points">4 points</span></li>
-              <li>Queen 	<span class="points">3 points</span></li>
-              <li>Jack 	<span class="points">2 points</span></li>
-            </ul>
+  </br>
+  <div class="loginRegisterSelection right">
 
-            <br/>
-            <p>The remaining cards have no point value.</p>
-            <p>
-              As you see, the total value of cards in the deck adds up to 120
-              points. The player which scores at least 61 points in a game wins.
-              Games can end in a draw when both reach the same point total (60).
+      <div class="box">
+    {% block loginRegisterRight %}{% endblock %}
+      </div>
 
-            </p>
-          </div>
-
-          <div class="upper right">
-            <h3>HOW TO play Briscola?</h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="text down left">
-            <p>
-              The computer shuffles the deck and deals three cards to each player.
-              It then takes a card (the seventh, in this case) and puts it face up
-              under the pile of undealt cards, which are placed face down.
-              The face-up card suit defines which will be the Briscola suit
-              for the game (adut).
-              The Briscola suit is the trump suit, i.e. the suit which always takes
-              all other cards, card ranking notwithstanding.
-
-             The game starts. The first to play is the player (A).
-           </p>
-           <ol>
-             <li>A leads one of his three cards, face up.</li>
-             <li>B plays one of his cards.</li>
-           </ol>
-           <p>
-             B wins or loses the trick according to these three simple rules:
-            </p>
-            <ul>
-              <li> If B plays a card of the same suit as the card led by A,
-                then the trick is won by whoever played the higher card - the winner
-                takes both cards away, and puts them, face down, in a pile near him.</li>
-              <li>
-                If B plays a card which has a different suit from the card which A
-                led, but neither card is a Briscola (trump), A wins the trick, and
-                the cards will go to A, even if B's card was of higher rank.
-              </li>
-              <li>
-                If B plays a card of a different suit from A's, and one of the cards
-                is a Briscola (trump), then the player of the Briscola wins the trick.
-              </li>
-            </ul>
-            <p>Example (Briscola is the four of spades):</p>
-            <ul>
-               <li>Player A leads the 5 of clubs.</li>
-               <li>Player B plays the ace of clubs. B takes the trick (Rule 1).</li>
-
-               <li>Player A leads the 5 of hearts.</li>
-               <li>Player B plays the King of clubs. Player A takes the trick (Rule 2)</li>
-
-               <li>Player A leads the ace of diamonds.</li>
-               <li>Player B plays 6 of spades (briscola). He wins the round (Rule 3).</li>
-            </ul>
-            <p class="note">
-             Note that Briscola is unlike many card games, in that there is no
-             obligation for the second player to play a card of the same suit as the
-             first card or to trump it, just because he can. The second player is
-             free to play any of his cards.
-           </p>
-           <p>
-            Note that if both players play a briscola, rule 1 dictates that the
-            higher ranking card wins.
-           </p>
-
-           <p>After each trick, each player draws a card from the pile of undealt
-             cards. The winner of the trick draws first, followed by the loser.
-             The player who won the trick then leads to the next one.
-           </p>
-
-           <p>Eventually the undealt cards will be used up, and at this point the
-              loser of the trick just played will draw the face up Briscola card.
-              The game then continues, without drawing cards, until all the cards
-              have been played.
-           </p>
-
-           <p>At the end, each player takes the pile of cards he won in tricks during
-              the game, and counts up the points according to the point scale shown
-              above. The player with more points wins, or if each has 60, it is a draw.
-           </p>
-          </div>
-          <div class="video picture down right">
-              <video id = "headerVideo" controls preload="none" autoplay>
-                <source src="{% static 'briscola/media/ExampleOfPlayGame.mp4' %}" type="video/mp4">
-                <p>If you are reading this, it is because your browser
-                  does not support the HTML5 video element.</p>
-              </video>
-              <img id="howToPlayImage" src="{% static 'briscola/media/triestine_comics.png' %}" alt="Header fancy picture" />
-
-          </div>
-        </div>
-      </article>
-    </main>
-    <footer>
-      <p>By: Ko je Ovo</p>
-    </footer>
-  </body>
-</html>
+  </div>
+</div>
+{% endblock %}
