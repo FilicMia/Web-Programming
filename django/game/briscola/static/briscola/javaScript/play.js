@@ -8,18 +8,19 @@ Function dynamically loading css file or js file.
 */
 function loadjscssfile(filename, filetype){
     if (filetype=="js"){ //if filename is a external JavaScript file
-        var fileref=document.createElement('script')
-        fileref.setAttribute("type","text/javascript")
-        fileref.setAttribute("src", staticBegin+filename+staticEnd)
+        var fileref=document.createElement('script');
+        fileref.setAttribute("type","text/javascript");
+        fileref.setAttribute("src", staticBegin+filename+staticEnd);
     }
     else if (filetype=="css"){ //if filename is an external CSS file
-        var fileref=document.createElement("link")
-        fileref.setAttribute("rel", "stylesheet")
-        fileref.setAttribute("type", "text/css")
-        fileref.setAttribute("href", staticBegin+filename+staticEnd)
+        var fileref=document.createElement("link");
+        fileref.setAttribute("rel", "stylesheet");
+        fileref.setAttribute("type", "text/css");
+        fileref.setAttribute("href", staticBegin+filename+staticEnd);
     }
-    if (typeof fileref!="undefined")
-        document.getElementsByTagName("head")[0].appendChild(fileref)
+    if (typeof fileref!="undefined"){
+        document.getElementsByTagName("head")[0].appendChild(fileref);
+      }
 }
 //static files path
 staticFilesPath = staticBegin + "briscola/"
@@ -47,7 +48,7 @@ The initial array is changed.
 Array.prototype.shuffle = function () {
     var m = this.length;
     while (m) {
-        let i = Math.floor(Math.random() * m--);
+        var i = Math.floor(Math.random() * m--);
         [this[m], this[i]] = [this[i], this[m]];
     }
     return this;
