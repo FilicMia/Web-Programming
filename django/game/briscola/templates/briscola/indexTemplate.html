@@ -31,13 +31,13 @@
            <li class="nav-item"><a href="{% url 'play' %}" id="playLink">Play</a></li>
             <!--About the project__ at the end can be as
           well the link to git source code.-->
-
+            <li id="proba" class="nav-item"><a href="{% url 'howToPlay' %}">Rules</a></li>
             <li class="nav-item"><a href="{% url 'moreAboutBriscola' %}">More</a></li>
             <li class="nav-item"><a href="{% url 'comments' %}">Comments</a></li>
             <li class="logoutLink nav-item"><a href="{% url 'logout' %}"><span id="user">{{ user }}</span>
               , logout?</a></li>
            {% else %}
-           <li class="loginLink nav-item"><a href="{% url 'index' %}#loginRegister">{% block linkName %}{% endblock %}</a></li>
+           <li class="loginLink nav-item"><a href="{% url 'index' %}#loginRegister">{% block linkName %}Login & play{% endblock %}</a></li>
            <li class="nav-item"><a href="{% url 'index' %}">Main</a></li>
            <li id="proba" class="nav-item"><a href="{% url 'howToPlay' %}">Rules</a></li>
            <li class="nav-item"><a href="{% url 'moreAboutBriscola' %}">More</a></li>

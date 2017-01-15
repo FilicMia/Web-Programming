@@ -1,8 +1,5 @@
 {% extends "briscola/index.html" %}
 {% load widget_tweaks %}
-{% block linkName %}
-  Register
-{% endblock %}
 {% block loginRegisterLeft %}
   {% if user.is_authenticated %}
   <span class="header-links">Logged in as {{ user.username }}.

@@ -32,7 +32,10 @@ def index(request):
 				context['uuu'] = user.username
 				login(request, user)
 
+
+
 	context['loginForm'] = LoginForm()
+
 
 	return render(request,'briscola/main.html', context)
 """
@@ -200,7 +203,7 @@ def commentAdd(request): #2nd from the url
 
   if request.method=='POST':
     eaform = EditCommentForm(request.POST, instance=comment)
-    if eaform.is_valid():	
+    if eaform.is_valid():
       eaform.save()
       return HttpResponseRedirect(reverse('comments'))
 
