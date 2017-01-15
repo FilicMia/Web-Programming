@@ -56,6 +56,10 @@ Everyone 5-99 (and more) who wants to relax, have fun or learn/master Briscola.
 
 #### Compatible Devices ####
 
+    PC
+    Smartphone
+    Tablet
+
 #### References ####
 [1] Playing card, Wikipedia, available at: https://en.wikipedia.org/wiki/Playing_card
 
