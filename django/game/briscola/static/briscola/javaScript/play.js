@@ -90,7 +90,7 @@ overed.
       Valid indexes are 0-2
       If < 0, the random card is played by computer side.
 */
-playTurn = function(playCardClass = "computer", index = -1){
+playTurn = function(playCardClass, index){
   if(playCardClass !== "computer" && playCardClass !== "player playCard"){
     roundOverFunction();
     return;
@@ -176,7 +176,7 @@ playCardEvent = function(e){
     //playCard are just images that can be played
     if(briscolaPlay.onTurn){
       playTurn("player playCard", parseInt(target.alt));
-      setTimeout(playTurn(),1000);
+      setTimeout(playTurn("computer", -1),1000);
     } else{
 
       waitAbitPopup();
@@ -255,7 +255,7 @@ sumToHisResult = function(pointsSum){
   briscolaPlay.setMyTurn(1);
   //let him play
   setTimeout(function(){
-    playTurn();
+    playTurn("computer", -1);
     briscolaPlay.setOnTurn(true);
   },5000);
 }
@@ -415,7 +415,10 @@ function BriscolaPlay(){
   this.deckSize = 40;
   this.cardsPath = "../static/briscola/media/pictures/slika";
   this.cardsLeft = this.deckSize;
-  this.mixedCards = [...Array(this.deckSize).keys()];
+  this.mixedCards = [];
+  for(var i = 0; i < this.deckSize ;++i){
+    this.mixedCards.push(i);
+  }
   this.cardPoints = [
     0, 0, 0, 0, 0, 2, 3, 4, 10, 11
   ]; //remaining of dealing with 10 will tell the points
@@ -630,11 +633,11 @@ continueGame = function(){
     if(computerTurnIsNow){
       briscolaPlay.myTurn = 0;
       briscolaPlay.onTurn = false;
-      playTurn();
+      playTurn("computer", -1);
     }
 
     if(briscolaPlay.onTurn !== true){
-      playTurn();
+      playTurn("computer", -1);
       briscolaPlay.onTurn = true;
     }
 

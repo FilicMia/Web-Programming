@@ -5,6 +5,16 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 # Create your models here.
+
+"""
+    Model representing the Comment on the application.
+    @item comment comment, text field
+    @item pub_date date time, the date of the publication of the comment
+    @item author forigen key, user who has created the comment.
+
+    It ic connected wit 2 permisions.
+    edit_comment and delete_comment.
+"""
 class Comment(models.Model):
   comment = models.TextField()
   pub_date = models.DateTimeField( default=timezone.now )

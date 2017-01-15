@@ -35,7 +35,7 @@ body main{
   border-radius: 10%;
   font-size:calc(2vw);
   max-height: 30%;
-  padding: 10%;
+  padding: 2%;
 
   color:#26ab89
 }
@@ -141,4 +141,8 @@ img.cardImg{ /**35:68 ration*/
   /*-ms-transform: rotate(90deg); /* IE 9 */
   /*-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
   /*transform: rotate(90deg);*/
+}
+
+.hideOpponentsCardDiv{
+	display:none;
 }

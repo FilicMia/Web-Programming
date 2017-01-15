@@ -15,7 +15,12 @@ from django.contrib.auth.decorators import login_required, permission_required, 
 from django.http import HttpResponse
 from django.contrib.auth.models import Group
 
-# Create your views here.
+"""
+Display of the front page of the application.
+The login form.
+
+@param request client's request
+"""
 def index(request):
 	context = {}
 	if request.method=='POST':
@@ -26,29 +31,59 @@ def index(request):
 			if user is not None:
 				context['uuu'] = user.username
 				login(request, user)
-	context['users'] = User.objects.all()
+
 	context['loginForm'] = LoginForm()
 
 	return render(request,'briscola/main.html', context)
+"""
+Renders the page which tell us more about the briscola.
 
+@param request client's request
+"""
 def moreAboutBriscola(request):
 	return render(request,'briscola/moreAboutBriscola.html', {})
 
+"""
+Renders the page which tell us how to play briscola.
+
+@param request client's request
+"""
 def howToPlay(request):
 	return render(request,'briscola/howToPlayBriscola.html', {})
 
+"""
+Renders the play page of the web application.
+Login is needed to obtain the play page.
+@param request client's request
+"""
 @login_required(login_url='index')
 def play(request):
 	return render(request,'briscola/playPage.html', {})
 
+"""
+Renders the round over page of the web application.
+Login is needed.
+@param request client's request
+"""
 @login_required(login_url='index')
 def roundOver(request, winner):
 	return render(request,'briscola/roundOverPage.html', {'winner': winner})
 
+"""
+Logs out the user.
+@param request client's request
+"""
 def logoutUser(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
+"""
+If the request does not contains correctly filled register from,
+renders the register form.
+Othervise, registers the user and redirects to the 'registrationSucces'
+page.
+@param request client's request
+"""
 def register(request):
     gotoDiv = False;
     if request.method == 'POST' :
@@ -77,14 +112,30 @@ def register(request):
     'briscola/registration.html',
     {'registrationForm': form , 'gotoDiv': gotoDiv})
 
+"""
+	Process the register success event.
+	Renders the page which notify the user that the registration has been sucessful.
+	@param request client's request
+"""
 def register_success(request):
     return render(request,
 	'briscola/registrationSuccess.html',{'loginForm': LoginForm()})
+
+"""
+	Renders the page with all comments about the application/game.
+	@param request client's request
+"""
 def comments(request):
 	context = {'comments': Comment.objects.all()}
 	return render(request,
 	'briscola/comments.html',context)
 
+"""
+	Renders the page to edit comment.
+	Each user can only edit his/her own comment.
+	Superuser can edit all comments.
+	@param request client's request
+"""
 @login_required(login_url='comments')
 @permission_required('briscola.edit_comment', login_url='comments')
 def commentEdit(request, comment_id): #2nd from the url
@@ -110,6 +161,12 @@ def commentEdit(request, comment_id): #2nd from the url
 
   return render(request, 'briscola/comment_edit.html', context)
 
+"""
+	Renders the page to delete comment.
+	Each user can only delete his/her own comment.
+	Superuser can edit all comments.
+	@param request client's request
+"""
 @login_required(login_url='comments')
 def commentDelete(request, comment_id): #2nd from the url
   context = {'loginForm': LoginForm()}
@@ -122,6 +179,13 @@ def commentDelete(request, comment_id): #2nd from the url
 
   return HttpResponseRedirect(reverse('comments'))
 
+"""
+	Renders the page to add comment.
+	Only loged in users that are in the group AddComment can
+	add new comment.
+
+	@param request client's request
+"""
 #check if it is in certain group
 #@user_passes_test(lambda u: u.has_perm('briscola.add_comment'), login_url='comments')
 #or with group
@@ -136,7 +200,7 @@ def commentAdd(request): #2nd from the url
 
   if request.method=='POST':
     eaform = EditCommentForm(request.POST, instance=comment)
-    if eaform.is_valid():
+    if eaform.is_valid():	
       eaform.save()
       return HttpResponseRedirect(reverse('comments'))
 
