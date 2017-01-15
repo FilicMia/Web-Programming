@@ -49,10 +49,12 @@ Main part in development takes card-game and web programming.<br />
 	
 2. Server side development:
 
-	i. Using ASP.NET MVC and Visual Studio 2012 (IDE)
+	i. Using Python and Django
 
 #### End user ####
 Everyone 5-99 (and more) who wants to relax, have fun or learn/master Briscola. 
+
+#### Compatible Devices ####
 
 #### References ####
 [1] Playing card, Wikipedia, available at: https://en.wikipedia.org/wiki/Playing_card
